@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>AP Psychology Units 3 and 4</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: sticky tab bar over five study modes (Learn, Diagrams, Conditioning lab, Flashcards, Quiz).
+   Same stain-slide palette as the Unit 2 guide: hematoxylin violet and eosin pink on cool lavender paper. */
+:root{
+  --bg:#F5F4FA; --surface:#FFFFFF; --surface2:#ECE9F7; --ink:#1A1730; --muted:#5B5776; --line:#D8D3EB;
+  --violet:#5B3FA6; --on-violet:#FFFFFF; --pink:#C0316D; --amber:#A25F00; --teal:#0B7A83; --slate:#5A6788;
+  --good:#17714F; --good-bg:#DDF3E9; --bad:#A93028; --bad-bg:#FBE4E1;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121020; --surface:#1B1830; --surface2:#26213F; --ink:#EFEBFC; --muted:#AAA4C9; --line:#37315A;
+    --violet:#A78BFA; --on-violet:#15102B; --pink:#F27AA8; --amber:#EDB25A; --teal:#5BD1DA; --slate:#9DB0DC;
+    --good:#52D1A2; --good-bg:#12332B; --bad:#FF8F86; --bad-bg:#3A1A1A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121020; --surface:#1B1830; --surface2:#26213F; --ink:#EFEBFC; --muted:#AAA4C9; --line:#37315A;
+  --violet:#A78BFA; --on-violet:#15102B; --pink:#F27AA8; --amber:#EDB25A; --teal:#5BD1DA; --slate:#9DB0DC;
+  --good:#52D1A2; --good-bg:#12332B; --bad:#FF8F86; --bad-bg:#3A1A1A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
+p{margin:0}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main.wrap{padding-block:22px 48px}
+.eyebrow{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* header and tabs */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{padding-block:12px 0}
+.brand h1{font-size:clamp(1.25rem,4.6vw,1.75rem);font-weight:800;margin-top:2px}
+.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:10px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:10px 12px 9px;font:700 15px var(--body);color:var(--muted);cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--violet);border-bottom-color:var(--violet)}
+.view h2{font-size:clamp(1.4rem,5vw,1.9rem);font-weight:800}
+.lede{color:var(--muted);margin:6px 0 18px;max-width:62ch}
+
+/* buttons */
+.btn{min-height:44px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font:700 15px var(--body);cursor:pointer}
+.btn:hover{border-color:var(--violet)}
+.btn.primary{background:var(--violet);color:var(--on-violet);border-color:var(--violet)}
+.btn.good{background:var(--good-bg);border-color:var(--good);color:var(--good)}
+.btn.small{min-height:36px;padding:6px 12px;font-size:14px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);max-width:100%}
+.seg button{border:0;background:none;padding:10px 16px;min-height:44px;font:700 15px var(--body);cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--violet);color:var(--on-violet)}
+
+/* learn */
+h3.unit{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--violet);padding-bottom:8px;border-bottom:2px solid var(--violet);margin:26px 0 14px}
+h3.unit:first-child{margin-top:0}
+.topic{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px}
+.topic summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 18px}
+.topic summary::-webkit-details-marker{display:none}
+.tname{font:800 1.12rem var(--display)}
+.tcount{font:500 11px var(--mono);letter-spacing:.08em;color:var(--muted);white-space:nowrap}
+.topic[open] summary{border-bottom:1px solid var(--line)}
+.tbody{padding:6px 18px 18px;min-width:0}
+.row{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:4px 18px;padding:11px 0;border-bottom:1px solid var(--line)}
+.row dt{font-weight:700;color:var(--violet)}
+.row dd{margin:0;min-width:0}
+dl{margin:0}
+.trap{background:var(--surface2);border-radius:10px;padding:12px 14px;margin-top:16px}
+.trap b{display:inline-block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-right:8px}
+.tblwrap{overflow-x:auto;margin:14px 0 4px}
+table.t{border-collapse:collapse;width:100%;min-width:440px;font-size:14.5px}
+.t th,.t td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.t th{background:var(--surface2);font-weight:700}
+.t td b{color:var(--violet)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:14px 0 4px}
+.flowbox{background:var(--surface2);border-radius:10px;padding:12px 14px}
+.flowbox>b{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.flowbox span{display:block}
+.tag{font-weight:700;color:var(--violet)}
+
+/* diagrams */
+.g1{--c:var(--violet)} .g2{--c:var(--pink)} .g3{--c:var(--amber)} .g4{--c:var(--teal)} .g5{--c:var(--slate)}
+.brainwrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px;min-width:0}
+#dsvg{display:block;width:100%;height:auto;max-height:72vh}
+.body{fill:var(--surface2);stroke:var(--ink);stroke-opacity:.35;stroke-width:1.5;pointer-events:none}
+.reg{fill:var(--c);fill-opacity:.22;stroke:var(--c);stroke-width:1.5;cursor:pointer}
+.reg:hover{fill-opacity:.4}
+.reg.line{fill:none;stroke-width:8;stroke-opacity:.55;stroke-linecap:round}
+.reg.line:hover{stroke-opacity:.8}
+.reg.dot{fill-opacity:.7}
+.reg.sel{fill-opacity:.65;stroke-width:2.6}
+.reg.dot.sel{fill-opacity:1}
+.reg.line.sel{stroke-opacity:1;stroke-width:9}
+.reg.wrong{fill:var(--bad);stroke:var(--bad);fill-opacity:.55}
+.reg.line.wrong{stroke:var(--bad);stroke-opacity:1;fill:none}
+.reg:focus-visible{outline:none;stroke:var(--ink);stroke-width:3}
+.deco{fill:none;stroke:var(--ink);stroke-opacity:.4;stroke-width:1.4;pointer-events:none}
+.lbl{font:500 10px var(--mono);letter-spacing:.06em;fill:var(--ink);opacity:.75;pointer-events:none}
+.cap{font:500 10px var(--mono);letter-spacing:.06em;fill:var(--muted);pointer-events:none}
+.lead{stroke:var(--ink);stroke-opacity:.35;stroke-width:1;pointer-events:none}
+.testing .lbl,.testing .lead{display:none}
+.side{min-width:0}
+.modebar{display:flex;gap:10px 12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-height:150px}
+.panel h3{font-size:1.4rem;font-weight:800;margin:6px 0 10px}
+.pill{display:inline-block;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--c);border:1px solid var(--c);border-radius:99px;padding:2px 10px}
+.facts dt{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.facts dd{margin:2px 0 0}
+.clue{font-size:1.15rem;font-weight:700;margin:8px 0}
+.msg{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--surface2)}
+.msg.ok{background:var(--good-bg);color:var(--good)}
+.msg.no{background:var(--bad-bg);color:var(--bad)}
+.chips{margin-top:16px;display:grid;gap:12px}
+.cglabel{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.dotk{width:10px;height:10px;border-radius:50%;background:var(--c);display:inline-block}
+.chiprow{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--c);background:var(--surface);border-radius:99px;padding:5px 12px;min-height:34px;font:700 13.5px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--c);color:var(--on-violet)}
+
+/* lab */
+.scen{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.scentext{font:700 clamp(1.1rem,4.2vw,1.35rem)/1.4 var(--display);margin:8px 0 16px}
+.opts{display:grid;gap:10px}
+.opts.grid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.opt{display:flex;flex-direction:column;gap:2px;text-align:left;width:100%;padding:13px 15px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font:400 16px var(--body)}
+.opt:hover:not(:disabled){border-color:var(--violet)}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--good-bg);border-color:var(--good)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.opt .mark{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.opt.correct .mark{color:var(--good)}
+.opt.wrong .mark{color:var(--bad)}
+.why{margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--surface2)}
+.sheet{margin-top:22px}
+
+/* flashcards */
+.controls{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-bottom:14px}
+.controls label{display:flex;gap:8px;align-items:center;font-size:14.5px}
+select{font:700 15px var(--body);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-height:44px;max-width:100%}
+.card{display:flex;flex-direction:column;justify-content:center;gap:14px;width:100%;min-height:240px;text-align:left;padding:26px 24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer}
+.card.back{background:var(--violet);color:var(--on-violet);border-color:var(--violet)}
+.cardtag{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.cardtext{font:700 clamp(1.15rem,4.4vw,1.5rem)/1.3 var(--display)}
+.card.back .cardtext{font-family:var(--body);font-weight:400;font-size:clamp(1.05rem,4vw,1.25rem);line-height:1.5}
+.cardhint{font-size:13px;opacity:.7}
+.bar{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;background:var(--violet);border-radius:99px}
+.small{font-size:14px;color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:28px 22px}
+.empty h3{font-size:1.25rem;margin-bottom:6px}
+
+/* quiz */
+.tchips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tchip{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;min-height:42px;font:700 14.5px var(--body);cursor:pointer;text-align:left}
+.tchip[aria-pressed="true"]{border-color:var(--violet);background:var(--violet);color:var(--on-violet)}
+.tchip small{display:block;font:500 10.5px var(--mono);opacity:.8;letter-spacing:.04em}
+.qtext{font:800 clamp(1.15rem,4.4vw,1.4rem)/1.3 var(--display);margin:14px 0}
+.score{font:800 clamp(2.4rem,10vw,3.6rem)/1 var(--display);color:var(--violet);margin:6px 0}
+.miss{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px}
+.miss p+p{margin-top:4px}
+.foot{margin-top:36px;color:var(--muted);font-size:13.5px;max-width:62ch}
+
+@media (max-width:760px){
+  .brainwrap{grid-template-columns:minmax(0,1fr)}
+  .row{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="eyebrow">AP Psychology · Units 3 and 4</span>
+      <h1>Sensation, Perception, and Learning</h1>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Study modes">
+      <button class="tab" role="tab" id="t-learn" data-view="learn" aria-selected="true">Learn</button>
+      <button class="tab" role="tab" id="t-diagram" data-view="diagram" aria-selected="false">Eye and ear</button>
+      <button class="tab" role="tab" id="t-lab" data-view="lab" aria-selected="false">Conditioning lab</button>
+      <button class="tab" role="tab" id="t-cards" data-view="cards" aria-selected="false">Flashcards</button>
+      <button class="tab" role="tab" id="t-quiz" data-view="quiz" aria-selected="false">Quiz</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view" id="v-learn">
+    <h2>Learn the material</h2>
+    <p class="lede">Open one topic at a time. Each ends with an exam trap and shortcuts to flashcards and a quiz on just that topic.</p>
+    <div id="topics"></div>
+  </section>
+
+  <section class="view" id="v-diagram" hidden>
+    <h2>Eye and ear</h2>
+    <p class="lede">Tap a part to see what it does and what happens when it fails. Switch on Test me to find parts from clues.</p>
+    <div class="brainwrap">
+      <div class="figure" id="figure">
+        <svg id="dsvg" viewBox="0 0 400 300" role="group" aria-label="Diagram"></svg>
+      </div>
+      <div class="side">
+        <div class="modebar">
+          <div class="seg" role="group" aria-label="Choose a diagram">
+            <button id="d-eye" aria-pressed="true">Eye</button>
+            <button id="d-ear" aria-pressed="false">Ear</button>
+          </div>
+          <button class="btn primary" id="testbtn" aria-pressed="false">Test me</button>
+        </div>
+        <p class="small" id="modehint" style="margin-bottom:10px">Exploring</p>
+        <div class="panel" id="panel" aria-live="polite"></div>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="v-lab" hidden>
+    <h2>Conditioning lab</h2>
+    <p class="lede">Read each short scenario and decide what kind of learning it shows. This is the skill most AP free-response and multiple-choice questions test.</p>
+    <div class="modebar">
+      <div class="seg" role="group" aria-label="Choose an exercise">
+        <button id="lab-type" aria-pressed="true">Name the learning</button>
+        <button id="lab-parts" aria-pressed="false">Label the parts</button>
+      </div>
+    </div>
+    <div id="lab-root"></div>
+    <details class="topic sheet"><summary><span class="tname">Cheat sheet</span><span class="tcount">OPEN IF STUCK</span></summary>
+      <div class="tbody">
+        <div class="flow">
+          <div class="flowbox"><b>Before conditioning</b><span>Food (<span class="tag">UCS</span>) gives salivation (<span class="tag">UCR</span>)</span><span>Bell (<span class="tag">NS</span>) gives no salivation</span></div>
+          <div class="flowbox"><b>During</b><span>Bell (NS) comes just before food (UCS). Salivation follows.</span></div>
+          <div class="flowbox"><b>After</b><span>Bell (<span class="tag">CS</span>) alone gives salivation (<span class="tag">CR</span>)</span></div>
+        </div>
+        <div class="tblwrap"><table class="t">
+          <tr><th></th><th>Add a stimulus (positive)</th><th>Remove a stimulus (negative)</th></tr>
+          <tr><th>Behavior goes up (reinforcement)</th><td><b>Positive reinforcement</b><br>Praise after a good grade</td><td><b>Negative reinforcement</b><br>Aspirin removes a headache</td></tr>
+          <tr><th>Behavior goes down (punishment)</th><td><b>Positive punishment</b><br>Extra chores after a bad choice</td><td><b>Negative punishment</b><br>Losing phone privileges</td></tr>
+        </table></div>
+      </div>
+    </details>
+  </section>
+
+  <section class="view" id="v-cards" hidden>
+    <h2>Flashcards</h2>
+    <p class="lede">Tap the card to see the answer. Cards you mark as known drop out of the round, and progress is saved on this device.</p>
+    <div class="controls">
+      <label>Set <select id="fc-topic"></select></label>
+      <label><input type="checkbox" id="fc-hide" checked> Hide cards I know</label>
+      <label><input type="checkbox" id="fc-shuffle" checked> Shuffle</label>
+    </div>
+    <div id="fc-root"></div>
+  </section>
+
+  <section class="view" id="v-quiz" hidden>
+    <h2>Practice quiz</h2>
+    <div id="quiz-root"></div>
+  </section>
+
+  <p class="foot">Content follows the AP Psychology Unit 3 and Unit 4 outlines. Your teacher may stress different details, so check the class syllabus too.</p>
+</main>
+
+<script>
+(function(){
+"use strict";
+const $=(s,r)=>(r||document).querySelector(s);
+const $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
+const store={
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t}return a};
+
+const UNITS={3:`Unit 3 · Sensation and Perception`,4:`Unit 4 · Learning`};
+
+/* ---------- notes ---------- */
+const PAVLOV=`<div class="flow">
+<div class="flowbox"><b>Before conditioning</b><span>Food (<span class="tag">UCS</span>) gives salivation (<span class="tag">UCR</span>)</span><span>Bell (<span class="tag">NS</span>) gives no salivation</span></div>
+<div class="flowbox"><b>During (acquisition)</b><span>Bell (NS) comes just before food (UCS). Salivation follows.</span></div>
+<div class="flowbox"><b>After conditioning</b><span>Bell (<span class="tag">CS</span>) alone gives salivation (<span class="tag">CR</span>)</span></div></div>`;
+const OPTABLE=`<div class="tblwrap"><table class="t">
+<tr><th></th><th>Add a stimulus (positive)</th><th>Remove a stimulus (negative)</th></tr>
+<tr><th>Behavior goes up (reinforcement)</th><td><b>Positive reinforcement</b><br>A sticker after cleaning up</td><td><b>Negative reinforcement</b><br>Buckling up stops the buzzer</td></tr>
+<tr><th>Behavior goes down (punishment)</th><td><b>Positive punishment</b><br>Extra homework for texting in class</td><td><b>Negative punishment</b><br>Losing phone privileges for a weekend</td></tr></table></div>
+<div class="tblwrap"><table class="t">
+<tr><th>Schedule</th><th>Rule</th><th>Pattern and example</th></tr>
+<tr><td><b>Fixed ratio</b></td><td>After a set number of responses</td><td>Fast, with a pause after each reward. Paid per 20 widgets.</td></tr>
+<tr><td><b>Variable ratio</b></td><td>After an unpredictable number of responses</td><td>Highest, steadiest rate. Hardest to extinguish. Slot machines.</td></tr>
+<tr><td><b>Fixed interval</b></td><td>First response after a set time</td><td>Speeds up as the time nears. Paycheck every two weeks.</td></tr>
+<tr><td><b>Variable interval</b></td><td>First response after an unpredictable time</td><td>Slow and steady. Checking email for a message.</td></tr></table></div>`;
+
+const NOTES=[
+{id:`sens`,unit:3,name:`Sensation basics`,full:`Sensation basics and attention`,
+ items:[
+ [`Sensation and perception`,`Sensation is detecting stimulus energy with the sense organs and sending it to the brain. Perception is organizing and interpreting that information.`],
+ [`Transduction`,`Converting physical energy (light, sound waves, chemicals, pressure) into neural signals.`],
+ [`Absolute threshold`,`The minimum stimulus needed to detect something 50% of the time.`],
+ [`Difference threshold`,`The minimum difference between two stimuli that a person notices 50% of the time. Also called the just noticeable difference (JND).`],
+ [`Weber's law`,`The JND is a constant proportion of the original stimulus. A heavy weight needs a bigger change than a light one before you notice it.`],
+ [`Signal detection theory`,`Detecting a faint stimulus depends on the stimulus and on the person's experience, expectations, motivation, and alertness. Possible outcomes: hit, miss, false alarm, correct rejection.`],
+ [`Subliminal stimuli`,`Stimuli below the absolute threshold. They can briefly prime responses, but there is no evidence they powerfully control behavior.`],
+ [`Sensory adaptation`,`Reduced sensitivity to a constant, unchanging stimulus, such as no longer feeling your clothes.`],
+ [`Sensory interaction`,`One sense influences another. Smell affects taste, and what you see can change what you hear (McGurk effect).`],
+ [`Synesthesia`,`A rare condition where one sense triggers another, such as seeing colors when hearing music.`],
+ [`Selective attention`,`Focusing on one stimulus and filtering out others. The cocktail party effect: you still notice your own name in another conversation.`],
+ [`Inattentional blindness`,`Missing a visible object because your attention is elsewhere (the invisible gorilla study).`],
+ [`Change blindness`,`Failing to notice a change in a scene.`]],
+ trap:`Sensation detects and perception interprets. Many questions hinge on which one a scenario describes.`},
+{id:`vis`,unit:3,name:`Vision`,full:`Vision`,
+ items:[
+ [`Light waves`,`Wavelength determines hue (color). Amplitude determines brightness.`],
+ [`Path of light`,`Cornea, pupil, lens, retina. The cornea does most of the bending of light.`],
+ [`Iris and pupil`,`The iris is a ring of muscle that controls the size of the pupil, the opening that lets in light.`],
+ [`Lens and accommodation`,`The lens changes shape to focus light on the retina. It gets thicker for near objects and flatter for far ones.`],
+ [`Retina`,`The light-sensitive inner layer at the back of the eye. Receptors transduce light, then signals pass to bipolar cells and then ganglion cells.`],
+ [`Rods`,`Work in dim light, handle peripheral vision and see black, white, and gray. None in the fovea.`],
+ [`Cones`,`Work in bright light and handle color and fine detail. Concentrated in the fovea.`],
+ [`Fovea and blind spot`,`The fovea is the sharpest part of the retina. The blind spot is where the optic nerve leaves the eye, with no receptors.`],
+ [`Visual pathway`,`Retina to optic nerve to optic chiasm to thalamus to visual cortex in the occipital lobe.`],
+ [`Trichromatic theory`,`The retina has three cone types (red, green, blue) and the brain mixes their signals to make every color (Young and Helmholtz).`],
+ [`Opponent-process theory`,`Color cells work in opposing pairs: red-green, blue-yellow, black-white. Explains afterimages (Hering).`],
+ [`Color vision deficiency`,`Usually red-green. More common in males because the genes are on the X chromosome.`],
+ [`Nearsighted and farsighted`,`Nearsighted: the image focuses in front of the retina, so distant objects are blurry. Farsighted: it focuses behind the retina, so near objects are blurry.`],
+ [`Feature detectors`,`Visual cortex neurons that respond to specific features such as edges, lines, angles, and movement (Hubel and Wiesel).`],
+ [`Parallel processing`,`The brain processes color, motion, form, and depth at the same time.`],
+ [`Prosopagnosia`,`Face blindness. Normal vision but trouble recognizing faces.`],
+ [`Blindsight`,`After visual cortex damage, a person can respond to visual stimuli without consciously seeing them.`]],
+ trap:`Trichromatic and opponent-process are both correct. Trichromatic works at the cones. Opponent-process works at later stages (ganglion cells and thalamus), which explains afterimages.`,
+ goDiagram:`eye`},
+{id:`aud`,unit:3,name:`Hearing`,full:`Hearing and body senses`,
+ items:[
+ [`Sound waves`,`Frequency (Hz) determines pitch. Amplitude determines loudness (decibels).`],
+ [`Path of sound`,`Pinna, auditory canal, eardrum, hammer, anvil, stirrup, oval window, cochlea, auditory nerve, thalamus, temporal lobe.`],
+ [`Ossicles`,`Three tiny bones (hammer, anvil, stirrup) that amplify vibrations from the eardrum.`],
+ [`Cochlea`,`A fluid-filled, snail-shaped tube. Vibrations move fluid and the basilar membrane, bending hair cells (the receptors).`],
+ [`Place theory`,`Pitch depends on where the wave peaks along the basilar membrane. Explains high pitches.`],
+ [`Frequency theory`,`Pitch depends on how fast the auditory nerve fires, matching the sound's frequency. Explains low pitches.`],
+ [`Sound localization`,`The brain compares the timing and intensity of sound at the two ears.`],
+ [`Conduction hearing loss`,`Damage to the eardrum or ossicles. A mechanical problem that hearing aids can help.`],
+ [`Sensorineural hearing loss`,`Damage to hair cells or the auditory nerve. Often caused by loud noise or aging. Cochlear implants can help.`],
+ [`Vestibular sense`,`Balance and head position. Detected by the semicircular canals and vestibular sacs in the inner ear.`],
+ [`Kinesthesis`,`Sense of the position and movement of body parts. Receptors are in muscles, joints, and tendons.`]],
+ trap:`Place theory covers high pitches and frequency theory covers low pitches. Both are right in different ranges.`,
+ goDiagram:`ear`},
+{id:`chem`,unit:3,name:`Taste, smell, touch`,full:`Taste, smell, touch, and pain`,
+ items:[
+ [`Taste (gustation)`,`Five basic tastes: sweet, sour, salty, bitter, and umami (savory). Receptors are in taste buds on the tongue.`],
+ [`Smell (olfaction)`,`A chemical sense. Receptors in the nasal cavity send signals to the olfactory bulb.`],
+ [`Smell and memory`,`Olfactory signals go straight to the limbic system (amygdala and hippocampus), skipping the thalamus. This is why smells trigger strong memories.`],
+ [`Pheromones`,`Chemical signals that affect others of the same species. Their role in humans is debated.`],
+ [`Touch`,`Skin receptors detect pressure, warmth, cold, and pain.`],
+ [`Gate-control theory`,`A "gate" in the spinal cord can block pain signals. Rubbing an injury or distraction can close the gate (Melzack and Wall).`],
+ [`Biopsychosocial pain`,`Pain depends on biology (injury), psychology (attention, expectation), and social-cultural factors.`],
+ [`Phantom limb sensation`,`Feeling sensations from a limb that has been amputated.`]],
+ trap:`Smell is the only sense that does not pass through the thalamus on its way to the cortex.`},
+{id:`org`,unit:3,name:`Perceptual organization`,full:`Perceptual organization and depth`,
+ items:[
+ [`Gestalt psychology`,`The whole is different from the sum of its parts. The brain organizes sensations into meaningful wholes.`],
+ [`Figure-ground`,`Seeing an object (figure) standing out from its background (ground).`],
+ [`Proximity`,`Things close together are grouped.`],
+ [`Similarity`,`Similar things are grouped.`],
+ [`Continuity`,`We prefer smooth, continuous patterns over broken ones.`],
+ [`Closure`,`We fill in gaps to see a complete object.`],
+ [`Binocular depth cues`,`Need both eyes. Retinal disparity: the two eyes get slightly different images (more different for near objects). Convergence: the eyes turn inward for close objects.`],
+ [`Monocular depth cues`,`Work with one eye: relative size, interposition (overlap), linear perspective, texture gradient, relative height, relative clarity, light and shadow, motion parallax.`],
+ [`Visual cliff`,`Gibson and Walk: crawling infants avoid the deep side, which suggests depth perception is present by the time they crawl.`],
+ [`Perceptual constancy`,`Seeing objects as unchanged despite changes in the image on the retina: size, shape, and color or brightness constancy.`],
+ [`Phi phenomenon`,`The illusion of movement when lights flash in sequence.`],
+ [`Illusions`,`Müller-Lyer (arrow-tipped lines of equal length) and the Ponzo illusion show how depth cues mislead us. The Müller-Lyer is weaker in cultures with few right angles.`]],
+ trap:`Binocular cues need two eyes. All the other depth cues are monocular, so a person with one eye can still use them.`},
+{id:`proc`,unit:3,name:`Perceptual processing`,full:`Perceptual processing`,
+ items:[
+ [`Bottom-up processing`,`Starts with sensory receptors and builds up to the brain's interpretation. Driven by the stimulus.`],
+ [`Top-down processing`,`Uses experience, knowledge, and expectations to interpret the stimulus. Driven by concepts.`],
+ [`Perceptual set`,`A mental predisposition to perceive one thing and not another, shaped by schemas, context, motivation, emotion, and culture.`],
+ [`Context effects`,`The surroundings change how we interpret an ambiguous stimulus.`],
+ [`Perceptual adaptation`,`The ability to adjust to changed sensory input. In Stratton's study, people wearing inverting goggles adapted.`],
+ [`Critical period`,`Hubel and Wiesel found that kittens deprived of vision in one eye early in life did not develop normal vision in that eye.`],
+ [`Extrasensory perception`,`Claimed perception without the senses (telepathy, clairvoyance, precognition). There is no reliable, repeatable scientific evidence for it.`]],
+ trap:`Real perception uses bottom-up and top-down processing together. A question usually asks which one a scenario emphasizes.`},
+{id:`cc`,unit:4,name:`Classical conditioning`,full:`Classical conditioning`,extra:PAVLOV,
+ items:[
+ [`Learning`,`A relatively permanent change in behavior or mental processes from experience.`],
+ [`Habituation`,`A decreased response to a repeated, harmless stimulus. Sensitization is an increased response.`],
+ [`Classical conditioning`,`Learning to link two stimuli so that a neutral stimulus triggers a response. Pavlov's dogs.`],
+ [`Unconditioned stimulus (UCS)`,`Naturally triggers a response with no learning, such as food.`],
+ [`Unconditioned response (UCR)`,`The natural, unlearned reaction to the UCS, such as salivating to food.`],
+ [`Neutral stimulus (NS)`,`Does not trigger the response before conditioning, such as the bell.`],
+ [`Conditioned stimulus (CS)`,`The former neutral stimulus after it has been paired with the UCS.`],
+ [`Conditioned response (CR)`,`The learned reaction to the CS alone.`],
+ [`Acquisition`,`The learning stage. The NS should come just before the UCS (about half a second).`],
+ [`Extinction`,`The CR fades when the CS appears repeatedly without the UCS.`],
+ [`Spontaneous recovery`,`An extinguished CR returns after a rest period.`],
+ [`Generalization and discrimination`,`Generalization: responding to stimuli similar to the CS. Discrimination: responding only to the CS.`],
+ [`Higher-order conditioning`,`A CS is used like a UCS to condition a new neutral stimulus.`],
+ [`Little Albert`,`Watson and Rayner paired a white rat with a loud noise. Albert came to fear the rat and similar furry objects. The study is considered unethical.`],
+ [`Taste aversion`,`Garcia: animals learn to avoid a taste after one pairing with illness, even hours later. Shows biological preparedness.`],
+ [`Counterconditioning`,`Replacing a fear response with relaxation. Systematic desensitization uses gradual exposure (Wolpe).`],
+ [`Rescorla`,`Conditioning depends on how well the CS predicts the UCS, not just on pairing.`]],
+ trap:`To label the parts, ask what happened first in the story. The UCR and CR can look identical (salivation) but they are triggered by different stimuli.`,goLab:true},
+{id:`op`,unit:4,name:`Operant conditioning`,full:`Operant conditioning`,extra:OPTABLE,
+ items:[
+ [`Operant conditioning`,`Learning in which behavior is strengthened or weakened by its consequences.`],
+ [`Law of effect`,`Thorndike: behavior followed by favorable consequences becomes more likely. Cats in puzzle boxes.`],
+ [`Skinner box`,`An operant chamber with a lever and food dispenser used to study animal behavior.`],
+ [`Reinforcement and punishment`,`Reinforcement increases a behavior. Punishment decreases it. Positive adds a stimulus. Negative removes one.`],
+ [`Primary and secondary reinforcers`,`Primary reinforcers meet a biological need (food, water). Secondary reinforcers gain value through learning (money, grades, tokens).`],
+ [`Shaping`,`Reinforcing successive approximations of the target behavior.`],
+ [`Escape and avoidance`,`Escape: a behavior ends an unpleasant stimulus. Avoidance: a behavior prevents it from starting.`],
+ [`Continuous and partial reinforcement`,`Continuous: reward every time, fastest learning but fast extinction. Partial: reward sometimes, slower learning but more resistant to extinction.`],
+ [`Discriminative stimulus`,`A cue that signals a response will be reinforced, such as an "open" sign.`],
+ [`Drawbacks of punishment`,`Effects can be temporary. It may cause fear or aggression and does not teach what to do instead.`],
+ [`Learned helplessness`,`Seligman: after unavoidable aversive events, animals and people stop trying to escape even when they could. Linked to depression.`],
+ [`Overjustification effect`,`Rewarding an activity someone already enjoys can reduce their interest in it.`]],
+ trap:`Negative does not mean bad. Negative reinforcement removes something unpleasant and makes a behavior more likely. Punishment always lowers a behavior.`,goLab:true},
+{id:`obs`,unit:4,name:`Cognitive and social learning`,full:`Observational and cognitive learning`,
+ items:[
+ [`Observational learning`,`Learning by watching others (models) and imitating them.`],
+ [`Bobo doll study`,`Bandura: children who watched an adult hit an inflatable doll imitated the aggression, even without being rewarded.`],
+ [`Vicarious reinforcement`,`Seeing a model rewarded makes you more likely to imitate. Vicarious punishment makes you less likely.`],
+ [`Four steps`,`Attention, retention, reproduction, and motivation.`],
+ [`Mirror neurons`,`Neurons that fire when you perform an action and when you watch someone else do it. May support imitation and empathy.`],
+ [`Latent learning`,`Tolman: rats that explored a maze without reward quickly ran it once food appeared. Learning was hidden until there was a reason to show it.`],
+ [`Cognitive map`,`A mental picture of the layout of an environment.`],
+ [`Insight learning`,`Köhler: a sudden "aha" solution, such as a chimp stacking boxes to reach bananas.`],
+ [`Instinctive drift`,`Breland and Breland: trained animals drift back toward instinctive behaviors, such as raccoons rubbing coins together.`],
+ [`Biological preparedness`,`Seligman: species are predisposed to learn some associations more easily, such as fear of snakes and taste aversion.`],
+ [`Behaviorism and cognition`,`Behaviorists (Watson, Skinner) studied observable behavior. Latent learning, insight, and modeling show that mental processes also matter.`]],
+ trap:`Learning can happen without reinforcement and without any visible behavior. Latent learning, insight, and modeling all show this.`}
+];
+const TOPIC={};NOTES.forEach(n=>{TOPIC[n.id]={name:n.name,unit:n.unit}});
+
+/* ---------- flashcards [topic, front, back] ---------- */
+const CARDS=[
+[`sens`,`Sensation versus perception?`,`Sensation: detecting stimulus energy and sending it to the brain. Perception: organizing and interpreting it.`],
+[`sens`,`What is transduction?`,`Converting physical energy (light, sound, chemicals, pressure) into neural signals.`],
+[`sens`,`Absolute threshold?`,`The minimum stimulus needed to detect something 50% of the time.`],
+[`sens`,`Difference threshold (JND)?`,`The minimum difference between two stimuli that you notice 50% of the time.`],
+[`sens`,`What is Weber's law?`,`The JND is a constant proportion of the original stimulus. Heavier weights need bigger changes to be noticed.`],
+[`sens`,`What is signal detection theory?`,`Detection depends on the stimulus and on experience, expectations, motivation, and alertness. Outcomes: hit, miss, false alarm, correct rejection.`],
+[`sens`,`What are subliminal stimuli?`,`Stimuli below the absolute threshold. They can briefly prime responses but have no proven power to control behavior.`],
+[`sens`,`What is sensory adaptation?`,`Reduced sensitivity to a constant, unchanging stimulus, like no longer noticing a smell.`],
+[`sens`,`What is sensory interaction?`,`One sense influences another, such as smell affecting taste.`],
+[`sens`,`What is synesthesia?`,`A condition where stimulating one sense triggers another, such as seeing colors when hearing sounds.`],
+[`sens`,`What is the cocktail party effect?`,`Selective attention: you can focus on one conversation but still notice your own name elsewhere.`],
+[`sens`,`What is inattentional blindness?`,`Failing to see a visible object because your attention is on something else (the invisible gorilla).`],
+[`sens`,`What is change blindness?`,`Failing to notice a change in a scene.`],
+[`vis`,`Wavelength versus amplitude of light?`,`Wavelength determines hue (color). Amplitude determines brightness.`],
+[`vis`,`Order of structures light passes through?`,`Cornea, pupil, lens, retina.`],
+[`vis`,`What does the iris do?`,`A ring of muscle that controls the size of the pupil and gives the eye its color.`],
+[`vis`,`What is accommodation?`,`The lens changes shape to focus: thicker for near objects, flatter for far ones.`],
+[`vis`,`What is the retina?`,`The light-sensitive inner surface of the eye containing rods and cones.`],
+[`vis`,`Rods versus cones?`,`Rods: dim light, peripheral vision, black and white. Cones: bright light, color, fine detail, concentrated in the fovea.`],
+[`vis`,`What is the fovea?`,`The center of the retina, packed with cones, where vision is sharpest.`],
+[`vis`,`What is the blind spot?`,`The place where the optic nerve leaves the eye. It has no receptors.`],
+[`vis`,`Path of visual information after the retina?`,`Bipolar cells, ganglion cells, optic nerve, optic chiasm, thalamus, visual cortex (occipital lobe).`],
+[`vis`,`Trichromatic theory?`,`The retina has three cone types (red, green, blue) and the brain combines their signals (Young and Helmholtz).`],
+[`vis`,`Opponent-process theory?`,`Color cells work in pairs: red-green, blue-yellow, black-white. Explains afterimages (Hering).`],
+[`vis`,`Which theory explains afterimages?`,`Opponent-process theory.`],
+[`vis`,`Most common color vision deficiency?`,`Red-green. More common in males because it is X-linked.`],
+[`vis`,`Nearsighted versus farsighted?`,`Nearsighted: image focuses in front of the retina (far objects blurry). Farsighted: behind the retina (near objects blurry).`],
+[`vis`,`What are feature detectors?`,`Visual cortex neurons that respond to edges, lines, angles, or movement (Hubel and Wiesel).`],
+[`vis`,`What is parallel processing?`,`Handling color, motion, form, and depth at the same time.`],
+[`vis`,`What is prosopagnosia?`,`Face blindness: normal vision but trouble recognizing faces.`],
+[`vis`,`What is blindsight?`,`Responding to visual stimuli without consciously seeing them, after visual cortex damage.`],
+[`aud`,`Frequency versus amplitude of sound?`,`Frequency (Hz) determines pitch. Amplitude determines loudness (decibels).`],
+[`aud`,`Path of sound through the ear?`,`Pinna, auditory canal, eardrum, hammer, anvil, stirrup, oval window, cochlea, auditory nerve, thalamus, temporal lobe.`],
+[`aud`,`What are the ossicles?`,`The hammer, anvil, and stirrup. They amplify vibrations from the eardrum.`],
+[`aud`,`What does the cochlea do?`,`Fluid-filled spiral where vibrations bend hair cells (the receptors) on the basilar membrane.`],
+[`aud`,`Place theory?`,`Pitch depends on where the wave peaks along the basilar membrane. Best for high pitches.`],
+[`aud`,`Frequency theory?`,`Pitch depends on the firing rate of the auditory nerve. Best for low pitches.`],
+[`aud`,`How do we locate a sound?`,`The brain compares the timing and intensity of the sound at the two ears.`],
+[`aud`,`Conduction versus sensorineural hearing loss?`,`Conduction: eardrum or ossicles damaged. Sensorineural: hair cells or auditory nerve damaged (cochlear implants may help).`],
+[`aud`,`What is the vestibular sense?`,`Balance and head position, sensed by the semicircular canals and vestibular sacs.`],
+[`aud`,`What is kinesthesis?`,`The sense of position and movement of body parts, from receptors in muscles, joints, and tendons.`],
+[`chem`,`The five basic tastes?`,`Sweet, sour, salty, bitter, and umami.`],
+[`chem`,`Where are taste receptors?`,`Taste buds on the tongue.`],
+[`chem`,`Why do smells trigger strong memories?`,`Olfactory signals go directly to the limbic system (amygdala, hippocampus) and skip the thalamus.`],
+[`chem`,`What are pheromones?`,`Chemical signals released by one animal that affect others of the same species.`],
+[`chem`,`What is gate-control theory?`,`A spinal cord "gate" can block pain. Rubbing an injury or distraction can close it (Melzack and Wall).`],
+[`chem`,`What is a biopsychosocial view of pain?`,`Pain depends on biology, psychology (attention, expectations), and social-cultural factors.`],
+[`chem`,`What is phantom limb sensation?`,`Feeling sensations from a limb that has been amputated.`],
+[`org`,`What is Gestalt psychology?`,`The whole is different from the sum of its parts. The brain organizes sensations into meaningful wholes.`],
+[`org`,`What is figure-ground?`,`Seeing an object (figure) standing out against its background (ground).`],
+[`org`,`Gestalt principle of proximity?`,`Things close together are grouped.`],
+[`org`,`Gestalt principle of similarity?`,`Similar things are grouped.`],
+[`org`,`Gestalt principle of continuity?`,`We prefer smooth, continuous patterns over broken ones.`],
+[`org`,`Gestalt principle of closure?`,`We fill in gaps to see a complete object.`],
+[`org`,`Two binocular depth cues?`,`Retinal disparity (each eye gets a slightly different image) and convergence (eyes turn inward for close objects).`],
+[`org`,`Name some monocular depth cues.`,`Relative size, interposition, linear perspective, texture gradient, relative height, relative clarity, light and shadow, motion parallax.`],
+[`org`,`What is interposition?`,`An object that blocks another appears closer.`],
+[`org`,`What is linear perspective?`,`Parallel lines appear to converge in the distance.`],
+[`org`,`What is texture gradient?`,`Texture looks finer and smoother as distance increases.`],
+[`org`,`What did the visual cliff show?`,`Gibson and Walk: crawling infants avoid the deep side, suggesting depth perception is present by crawling age.`],
+[`org`,`What is perceptual constancy?`,`Seeing objects as unchanged despite changes in the retinal image: size, shape, and color or brightness.`],
+[`org`,`What is the phi phenomenon?`,`Apparent movement from lights flashing in sequence.`],
+[`org`,`What does the Müller-Lyer illusion show?`,`Equal lines look different because of arrow tips and depth cues. Weaker in cultures with few right angles.`],
+[`proc`,`Bottom-up processing?`,`Starts with sensory input and builds up to perception (stimulus-driven).`],
+[`proc`,`Top-down processing?`,`Uses experience, knowledge, and expectations to interpret input (concept-driven).`],
+[`proc`,`What is perceptual set?`,`A mental predisposition to perceive one thing and not another, shaped by schemas, context, motivation, emotion, and culture.`],
+[`proc`,`What are context effects?`,`The surroundings change how an ambiguous stimulus is interpreted.`],
+[`proc`,`What is perceptual adaptation?`,`Adjusting to changed sensory input, such as wearing inverting goggles (Stratton).`],
+[`proc`,`What did Hubel and Wiesel's kitten study show?`,`There is a critical period: kittens with one eye covered early did not develop normal vision in it.`],
+[`proc`,`What does research say about ESP?`,`There is no reliable, repeatable scientific evidence for it.`],
+[`cc`,`What is learning?`,`A relatively permanent change in behavior or mental processes from experience.`],
+[`cc`,`What is habituation?`,`A decreased response to a repeated, harmless stimulus.`],
+[`cc`,`What is classical conditioning?`,`Learning to link two stimuli so that a neutral stimulus triggers a response (Pavlov).`],
+[`cc`,`What is a UCS?`,`A stimulus that naturally triggers a response without learning, such as food.`],
+[`cc`,`What is a UCR?`,`The natural, unlearned response to the UCS, such as salivating to food.`],
+[`cc`,`What is a neutral stimulus?`,`A stimulus that does not trigger the response before conditioning.`],
+[`cc`,`What is a CS?`,`A formerly neutral stimulus that now triggers the response because it was paired with the UCS.`],
+[`cc`,`What is a CR?`,`The learned response to the CS alone.`],
+[`cc`,`What is acquisition?`,`The learning stage when the NS is paired with the UCS. The NS should come just before the UCS.`],
+[`cc`,`What is extinction in classical conditioning?`,`The CR fades when the CS appears repeatedly without the UCS.`],
+[`cc`,`What is spontaneous recovery?`,`An extinguished CR reappears after a rest period.`],
+[`cc`,`What is generalization?`,`Responding to stimuli similar to the CS.`],
+[`cc`,`What is discrimination?`,`Responding to the CS but not to similar stimuli.`],
+[`cc`,`What is higher-order conditioning?`,`A CS is used like a UCS to condition a new neutral stimulus.`],
+[`cc`,`What did Little Albert show?`,`Watson and Rayner conditioned fear of a white rat with a loud noise. It generalized to furry objects. The study was unethical.`],
+[`cc`,`What did Garcia find about taste aversion?`,`Animals learn a taste-illness link in one trial, even with hours between them. This shows biological preparedness.`],
+[`cc`,`What is systematic desensitization?`,`Counterconditioning: replacing fear with relaxation through gradual exposure (Wolpe).`],
+[`cc`,`What did Rescorla add?`,`Conditioning depends on how well the CS predicts the UCS, not just on pairing.`],
+[`op`,`What is operant conditioning?`,`Learning in which behavior is strengthened or weakened by its consequences.`],
+[`op`,`What is the law of effect?`,`Thorndike: behavior followed by favorable consequences becomes more likely.`],
+[`op`,`What is a Skinner box?`,`An operant chamber with a lever and food dispenser for studying animal behavior.`],
+[`op`,`Reinforcement versus punishment?`,`Reinforcement increases a behavior. Punishment decreases it.`],
+[`op`,`What do positive and negative mean in operant conditioning?`,`Positive: a stimulus is added. Negative: a stimulus is removed. They do not mean good or bad.`],
+[`op`,`Positive reinforcement?`,`Adding something pleasant to increase a behavior, like praise or a treat.`],
+[`op`,`Negative reinforcement?`,`Removing something unpleasant to increase a behavior, like taking aspirin to end a headache. It is not punishment.`],
+[`op`,`Positive punishment?`,`Adding something unpleasant to decrease a behavior, like extra chores.`],
+[`op`,`Negative punishment?`,`Removing something pleasant to decrease a behavior, like losing phone privileges.`],
+[`op`,`Primary versus secondary reinforcers?`,`Primary: meet a biological need (food, water). Secondary: learned value (money, grades, tokens).`],
+[`op`,`What is shaping?`,`Reinforcing successive approximations of the target behavior.`],
+[`op`,`Escape versus avoidance learning?`,`Escape: behavior ends an unpleasant stimulus. Avoidance: behavior prevents it from starting.`],
+[`op`,`Fixed ratio schedule?`,`Reinforcement after a set number of responses. Fast, with a pause after each reward.`],
+[`op`,`Variable ratio schedule?`,`Reinforcement after an unpredictable number of responses. Highest, steadiest rate and the most resistant to extinction (slot machines).`],
+[`op`,`Fixed interval schedule?`,`Reinforcement for the first response after a set time. Responses speed up as the time nears (weekly paycheck).`],
+[`op`,`Variable interval schedule?`,`Reinforcement for the first response after an unpredictable time. Slow, steady responding (checking email).`],
+[`op`,`Ratio versus interval?`,`Ratio schedules count responses. Interval schedules count time.`],
+[`op`,`Continuous versus partial reinforcement?`,`Continuous: fastest learning but quick extinction. Partial: slower learning but more resistant to extinction.`],
+[`op`,`What is a discriminative stimulus?`,`A cue that signals a response will be reinforced.`],
+[`op`,`Drawbacks of punishment?`,`Effects can be temporary. It may cause fear or aggression and does not teach an alternative behavior.`],
+[`op`,`What is learned helplessness?`,`After unavoidable aversive events, individuals stop trying to escape even when they could (Seligman).`],
+[`op`,`What is the overjustification effect?`,`Rewarding something people already enjoy can reduce their interest in it.`],
+[`op`,`Operant versus classical conditioning?`,`Operant links a voluntary behavior to its consequence. Classical links two stimuli to produce an involuntary response.`],
+[`obs`,`What is observational learning?`,`Learning by watching others (models) and imitating them.`],
+[`obs`,`What did the Bobo doll study show?`,`Bandura: children imitated an adult's aggression toward the doll without being rewarded themselves.`],
+[`obs`,`What is vicarious reinforcement?`,`Seeing a model rewarded makes you more likely to copy the behavior.`],
+[`obs`,`What are the four steps of observational learning?`,`Attention, retention, reproduction, and motivation.`],
+[`obs`,`What are mirror neurons?`,`Neurons that fire when you perform an action and when you watch someone else perform it.`],
+[`obs`,`What is latent learning?`,`Learning that is not shown until there is an incentive. Tolman's rats and the maze.`],
+[`obs`,`What is a cognitive map?`,`A mental picture of the layout of an environment.`],
+[`obs`,`What is insight learning?`,`A sudden realization of a solution (Köhler's chimps stacking boxes).`],
+[`obs`,`What is instinctive drift?`,`Trained animals drift back toward instinctive behaviors (raccoons rubbing coins).`],
+[`obs`,`What is biological preparedness?`,`Species are predisposed to learn some associations more easily, like fear of snakes.`],
+[`obs`,`Why do cognitive learning findings challenge strict behaviorism?`,`They show mental processes (maps, insight, expectations) matter, not just stimuli and responses.`]
+];
+
+/* ---------- quiz [topic, question, right, [wrong x3], explanation] ---------- */
+const Q=[
+[`sens`,`Over many trials, a person reports hearing a very faint tone about half the time it is played. The tone's intensity is closest to the person's...`,`Absolute threshold`,[`Difference threshold`,`Transduction`,`Perceptual set`],`The absolute threshold is the minimum stimulus detected 50% of the time.`],
+[`sens`,`A person can just barely tell a 20-pound weight from a 22-pound weight. According to Weber's law, about how much heavier must a 100-pound weight be to be noticed?`,`10 pounds`,[`2 pounds`,`5 pounds`,`22 pounds`],`The JND was 2 of 20 pounds, which is 10%. Ten percent of 100 pounds is 10 pounds.`],
+[`sens`,`Marcus stops noticing the feel of his glasses on his nose after a few minutes. This is...`,`Sensory adaptation`,[`Transduction`,`Inattentional blindness`,`Subliminal perception`],`Sensitivity drops when a stimulus stays constant.`],
+[`sens`,`A security screener says a bag contains a weapon, but it does not. In signal detection terms, this is a...`,`False alarm`,[`Hit`,`Miss`,`Correct rejection`],`A false alarm means saying the signal is present when it is not.`],
+[`sens`,`Which process turns light waves, sound waves, and chemicals into neural signals?`,`Transduction`,[`Sensory adaptation`,`Accommodation`,`Habituation`],`Transduction converts physical energy into neural impulses.`],
+[`sens`,`Viewers counting basketball passes fail to notice a person in a gorilla suit walk through the scene. This shows...`,`Inattentional blindness`,[`Change blindness`,`Sensory adaptation`,`Perceptual constancy`],`Nothing changed in the scene. An unexpected object was missed because attention was elsewhere.`],
+[`sens`,`At a loud party, Dana hears her name in a conversation across the room. This is best explained by...`,`Selective attention`,[`Sensory adaptation`,`Transduction`,`Feature detection`],`This is the cocktail party effect, a result of selective attention.`],
+[`sens`,`Food tastes bland when you have a stuffy nose. This shows...`,`Sensory interaction`,[`Sensory adaptation`,`Signal detection`,`Kinesthesis`],`Smell and taste work together, so losing one changes the other.`],
+[`vis`,`Which physical property of light mainly determines the color we see?`,`Wavelength`,[`Amplitude`,`Pupil size`,`Cone density`],`Wavelength determines hue. Amplitude determines brightness.`],
+[`vis`,`Light entering the eye passes through which structures in order?`,`Cornea, pupil, lens, retina`,[`Pupil, cornea, retina, lens`,`Lens, cornea, pupil, retina`,`Cornea, lens, retina, pupil`],`Light is bent by the cornea, enters through the pupil, is focused by the lens, and lands on the retina.`],
+[`vis`,`Walking from sunlight into a dark theater, you slowly begin to see. Which receptors take over?`,`Rods`,[`Cones`,`Ganglion cells`,`Hair cells`],`Rods work in dim light. Cones need brighter light.`],
+[`vis`,`The fovea is the region of the retina with...`,`Densely packed cones and the sharpest vision`,[`Only rods and no color vision`,`No receptors, which creates the blind spot`,`The optic nerve fibers leaving the eye`],`The fovea is the center of the retina, packed with cones.`],
+[`vis`,`Why is there a blind spot in each eye?`,`The optic nerve leaves the eye there, so there are no receptors`,[`Rods and cones are too crowded there`,`The lens cannot focus light on that spot`,`The cornea blocks light there`],`The blind spot is where the optic nerve exits. Nothing there detects light.`],
+[`vis`,`After staring at a green square, a viewer sees a red afterimage. Which theory best explains this?`,`Opponent-process theory`,[`Trichromatic theory`,`Place theory`,`Gate-control theory`],`Opponent pairs such as red-green explain why tiring one color produces its opposite.`],
+[`vis`,`Hubel and Wiesel discovered neurons in the visual cortex that fire for specific edges and angles. These are called...`,`Feature detectors`,[`Place cells`,`Mirror neurons`,`Bipolar cells`],`Feature detectors respond to specific features such as lines, edges, and movement.`],
+[`vis`,`After a stroke, a man with normal eyesight cannot recognize his wife's face but knows her by her voice. This is...`,`Prosopagnosia`,[`Blindsight`,`Color blindness`,`Change blindness`],`Prosopagnosia is face blindness.`],
+[`vis`,`A nearsighted person has trouble seeing distant objects because the image focuses...`,`In front of the retina`,[`Behind the retina`,`On the fovea`,`On the blind spot`],`In nearsightedness the eye focuses distant images in front of the retina.`],
+[`aud`,`Which property of sound is mostly determined by its frequency?`,`Pitch`,[`Loudness`,`Localization`,`Decibel level`],`Higher frequency means higher pitch. Amplitude determines loudness.`],
+[`aud`,`Which lists the middle ear bones in order from the eardrum?`,`Hammer, anvil, stirrup`,[`Anvil, hammer, stirrup`,`Stirrup, anvil, hammer`,`Hammer, stirrup, anvil`],`Vibrations pass from the hammer to the anvil to the stirrup.`],
+[`aud`,`The receptors for hearing are the...`,`Hair cells in the cochlea`,[`Eardrum`,`Semicircular canals`,`Hammer, anvil, and stirrup`],`Hair cells on the basilar membrane transduce vibrations into neural signals.`],
+[`aud`,`Years of loud concerts destroy a person's hair cells. This causes...`,`Sensorineural hearing loss`,[`Conduction hearing loss`,`Auditory adaptation`,`Vestibular dysfunction`],`Damage to hair cells or the auditory nerve is sensorineural loss.`],
+[`aud`,`Which theory best explains how we hear high-pitched sounds?`,`Place theory`,[`Frequency theory`,`Opponent-process theory`,`Gate-control theory`],`High pitches peak at specific places on the basilar membrane. Frequency theory handles low pitches.`],
+[`aud`,`How does the brain tell where a sound is coming from?`,`By comparing the timing and intensity of sound at the two ears`,[`By the loudness of the sound alone`,`By the shape of the cochlea`,`By the vestibular sacs`],`A sound reaches the nearer ear slightly sooner and slightly louder.`],
+[`aud`,`With your eyes closed, you still know where your hand is. Which sense is this?`,`Kinesthesis`,[`Vestibular sense`,`Sensory adaptation`,`Gate control`],`Kinesthesis senses the position and movement of body parts.`],
+[`aud`,`Spinning in circles makes you dizzy because fluid keeps moving in the...`,`Semicircular canals`,[`Cochlea`,`Oval window`,`Auditory canal`],`The semicircular canals detect rotation and support balance.`],
+[`chem`,`Umami is the taste associated with...`,`Savory foods rich in glutamate`,[`Sweet foods`,`Spoiled or poisonous foods`,`Acidic foods`],`Umami is the savory taste, as in meat and aged cheese.`],
+[`chem`,`Why can a smell instantly bring back a vivid memory?`,`Olfactory signals go straight to the limbic system and skip the thalamus`,[`Smell is processed only in the occipital lobe`,`Smell receptors are located in the hippocampus`,`Smell is the only sense that has no receptors`],`Smell reaches the amygdala and hippocampus directly.`],
+[`chem`,`Rubbing a banged knee reduces the pain. Which theory explains this?`,`Gate-control theory`,[`Opponent-process theory`,`Place theory`,`Signal detection theory`],`Touch signals can close the spinal "gate" to pain signals.`],
+[`chem`,`A woman feels pain in a hand that was amputated years ago. This is called...`,`Phantom limb sensation`,[`Synesthesia`,`Sensory adaptation`,`Kinesthesis`],`The brain still has a map of the missing limb.`],
+[`org`,`Dots are spaced so each column is closer together than each row, so they look like columns. Which principle is this?`,`Proximity`,[`Similarity`,`Closure`,`Continuity`],`Things that are close together are grouped.`],
+[`org`,`Viewers see a complete triangle even though parts of its outline are missing. Which principle is this?`,`Closure`,[`Proximity`,`Figure-ground`,`Similarity`],`The brain fills in gaps to see a whole object.`],
+[`org`,`Which depth cue requires both eyes?`,`Retinal disparity`,[`Linear perspective`,`Interposition`,`Texture gradient`],`The others are monocular cues.`],
+[`org`,`Railroad tracks appear to meet in the distance. Which depth cue is this?`,`Linear perspective`,[`Retinal disparity`,`Convergence`,`Motion parallax`],`Parallel lines seem to converge with distance.`],
+[`org`,`A friend walks away and seems to stay the same size even though her image on your retina shrinks. This is...`,`Size constancy`,[`Shape constancy`,`The phi phenomenon`,`Convergence`],`Size constancy keeps objects looking the same size despite changing retinal images.`],
+[`org`,`Neon sign lights flash in order and seem to move. This is the...`,`Phi phenomenon`,[`Visual cliff`,`Motion parallax`,`Closure`],`Phi phenomenon is apparent motion from lights flashing in sequence.`],
+[`org`,`The visual cliff experiment suggested that...`,`Most infants perceive depth by the time they can crawl`,[`Depth perception develops only after age five`,`Infants rely only on binocular cues`,`Depth perception is unrelated to experience`],`Crawling infants avoided the deep side.`],
+[`proc`,`A reader sees the same ambiguous symbol as the letter B in "A B C" and as the number 13 in "12 13 14". This shows...`,`Context and top-down processing`,[`Bottom-up processing only`,`Sensory adaptation`,`Retinal disparity`],`Expectations and context shape interpretation.`],
+[`proc`,`Which is the best example of bottom-up processing?`,`Building a perception of an unfamiliar object from its edges, colors, and shapes`,[`Recognizing a friend in a crowd because you expect to see her`,`Reading a sloppy word by guessing from the sentence`,`Hearing a noise as a footstep because you are scared`],`Bottom-up processing starts from the raw sensory input.`],
+[`proc`,`Kittens had one eye covered early in life and never developed normal vision in that eye. This suggests...`,`A critical period for visual development`,[`Sensory adaptation`,`Blindsight`,`Opponent processing`],`Hubel and Wiesel showed that early visual experience is needed.`],
+[`proc`,`What does scientific research say about ESP?`,`There is no reliable, repeatable evidence for it`,[`It has been confirmed in many labs`,`It is well supported for twins`,`It works only at subliminal levels`],`Claims of ESP have not held up under controlled, repeated testing.`],
+[`proc`,`Which statement about subliminal messages is accurate?`,`They can briefly prime responses, but there is no evidence they powerfully control behavior`,[`They reliably change what people buy`,`They are presented above the absolute threshold`,`They cause permanent attitude change`],`Effects are small and short-lived.`],
+[`cc`,`A dog salivates when it hears a bell that has always come before food. The bell is now a...`,`Conditioned stimulus`,[`Unconditioned stimulus`,`Conditioned response`,`Neutral stimulus`],`A formerly neutral stimulus that now triggers a response is a conditioned stimulus.`],
+[`cc`,`Pavlov's dogs salivate when given food, without any training. The food is the...`,`Unconditioned stimulus`,[`Conditioned stimulus`,`Unconditioned response`,`Conditioned response`],`The food naturally triggers salivation.`],
+[`cc`,`A child bitten by a large dog becomes afraid of all dogs. This is...`,`Generalization`,[`Discrimination`,`Extinction`,`Spontaneous recovery`],`Generalization is responding to stimuli similar to the CS.`],
+[`cc`,`A child bitten by one dog fears only that dog and relaxes around other dogs. This is...`,`Discrimination`,[`Generalization`,`Extinction`,`Acquisition`],`Discrimination is responding only to the specific CS.`],
+[`cc`,`A tone no longer produces salivation after being presented many times without food. This is...`,`Extinction`,[`Spontaneous recovery`,`Generalization`,`Acquisition`],`The CR fades when the CS is no longer paired with the UCS.`],
+[`cc`,`After extinction and a rest period, the tone suddenly produces some salivation again. This is...`,`Spontaneous recovery`,[`Acquisition`,`Higher-order conditioning`,`Generalization`],`An extinguished response can reappear after a pause.`],
+[`cc`,`Which timing produces the fastest classical conditioning?`,`The neutral stimulus begins just before the unconditioned stimulus`,[`The neutral stimulus comes long after the unconditioned stimulus`,`The two stimuli are presented hours apart`,`The unconditioned stimulus comes well before the neutral stimulus`],`The NS must predict the UCS, so it comes first, usually by about half a second.`],
+[`cc`,`In Watson and Rayner's study, Little Albert cried at a loud noise. The loud noise was the...`,`Unconditioned stimulus`,[`Conditioned stimulus`,`Conditioned response`,`Neutral stimulus`],`The noise naturally caused fear. The rat became the CS.`],
+[`cc`,`Garcia's taste-aversion research was surprising because...`,`Animals learned the link after one pairing, even with hours between taste and illness`,[`It required hundreds of pairings`,`The illness had to follow the taste by half a second`,`Any stimulus paired with illness worked equally well`],`This challenged the idea that any stimuli can be paired equally well, and supports biological preparedness.`],
+[`cc`,`A therapist teaches a client with a dog phobia to relax while gradually approaching dogs. This technique is based on...`,`Counterconditioning (systematic desensitization)`,[`Observational learning`,`Latent learning`,`Negative punishment`],`Relaxation replaces the fear response through classical conditioning.`],
+[`cc`,`A tone is paired with food until the tone causes salivation. Then a light is paired with the tone, and the light alone causes salivation. This is...`,`Higher-order conditioning`,[`Generalization`,`Spontaneous recovery`,`Discrimination`],`The tone (a CS) acts like a UCS to condition the light.`],
+[`cc`,`A person feels dread at the sound of a dentist's drill. The dread is...`,`A conditioned response`,[`An unconditioned response`,`A conditioned stimulus`,`A reinforcer`],`The drill (CS) now triggers dread, a learned reaction.`],
+[`cc`,`A person no longer notices the hum of a refrigerator. This reduced response to a repeated, harmless stimulus is...`,`Habituation`,[`Extinction`,`Sensitization`,`Discrimination`],`Habituation is a decreased response to a repeated stimulus.`],
+[`cc`,`Rescorla argued that conditioning depends mainly on...`,`How well the CS predicts the UCS`,[`How often the stimuli happen to occur near each other`,`The strength of the unconditioned response`,`The reinforcement schedule`],`Conditioning is about prediction, not just pairing.`],
+[`op`,`A cat learns to escape a puzzle box faster over repeated trials. Thorndike explained this with...`,`The law of effect`,[`Classical conditioning`,`Latent learning`,`Insight`],`Behaviors followed by favorable outcomes become more likely.`],
+[`op`,`A rat presses a lever and receives a food pellet, and it presses more. The pellet is...`,`A positive reinforcer`,[`A negative reinforcer`,`A punisher`,`A neutral stimulus`],`Adding a pleasant stimulus that increases behavior is positive reinforcement.`],
+[`op`,`A car's buzzer stops when you fasten your seat belt, so you buckle up faster each time. This is...`,`Negative reinforcement`,[`Positive reinforcement`,`Negative punishment`,`Positive punishment`],`Removing an unpleasant stimulus increases the behavior.`],
+[`op`,`A teen loses video game privileges for missing curfew and then misses curfew less often. This is...`,`Negative punishment`,[`Positive punishment`,`Negative reinforcement`,`Positive reinforcement`],`A pleasant stimulus is removed and the behavior decreases.`],
+[`op`,`A student gets extra homework for talking in class and talks less. This is...`,`Positive punishment`,[`Negative punishment`,`Negative reinforcement`,`Extinction`],`An unpleasant stimulus is added and the behavior decreases.`],
+[`op`,`Which statement about negative reinforcement is correct?`,`It removes an unpleasant stimulus and makes a behavior more likely`,[`It adds an unpleasant stimulus to decrease a behavior`,`It is the same thing as punishment`,`It removes a pleasant stimulus to decrease a behavior`],`Negative reinforcement is not punishment. It increases behavior.`],
+[`op`,`A trainer teaches a dog to roll over by rewarding steps that get closer and closer to a full roll. This is...`,`Shaping`,[`Generalization`,`Latent learning`,`Higher-order conditioning`],`Shaping reinforces successive approximations.`],
+[`op`,`A gambler keeps pulling a slot machine that pays after an unpredictable number of pulls. Which schedule is this?`,`Variable ratio`,[`Fixed ratio`,`Variable interval`,`Fixed interval`],`Rewards depend on an unpredictable number of responses.`],
+[`op`,`A worker is paid for every 20 widgets assembled. Which schedule is this?`,`Fixed ratio`,[`Variable ratio`,`Fixed interval`,`Variable interval`],`Pay comes after a set number of responses.`],
+[`op`,`Employees get paychecks every two weeks. Which schedule is this?`,`Fixed interval`,[`Fixed ratio`,`Variable ratio`,`Variable interval`],`Reward comes after a set amount of time.`],
+[`op`,`A person checks email at random times because a message might arrive at any moment. Which schedule is this?`,`Variable interval`,[`Fixed interval`,`Variable ratio`,`Fixed ratio`],`Rewards come after unpredictable amounts of time.`],
+[`op`,`Which pattern is most resistant to extinction?`,`Partial reinforcement on a variable ratio schedule`,[`Continuous reinforcement`,`Fixed interval reinforcement`,`A single reinforcement`],`Unpredictable, partial reinforcement keeps behavior going longest.`],
+[`op`,`Which is a secondary (conditioned) reinforcer?`,`Money`,[`Food`,`Water`,`Warmth`],`Money has value only because of learning. The others meet biological needs.`],
+[`op`,`A pigeon pecks only when a green light is on, because pecking is reinforced only then. The green light is a...`,`Discriminative stimulus`,[`Conditioned response`,`Primary reinforcer`,`Punisher`],`It signals that a response will be reinforced.`],
+[`op`,`Dogs given inescapable shocks later fail to escape shocks they could avoid. Seligman called this...`,`Learned helplessness`,[`Extinction`,`Latent learning`,`Instinctive drift`],`They learned that nothing they did mattered.`],
+[`op`,`A child who loved drawing draws less after being paid for every picture. This is the...`,`Overjustification effect`,[`Law of effect`,`Learned helplessness`,`Spontaneous recovery`],`External rewards can reduce interest in an enjoyable activity.`],
+[`op`,`Which is a common drawback of physical punishment?`,`It may create fear and does not teach an alternative behavior`,[`It always produces permanent change`,`It is the most effective way to build new behaviors`,`It works best when delayed`],`Punishment tells what not to do, not what to do instead.`],
+[`op`,`Which pair correctly contrasts classical and operant conditioning?`,`Classical links two stimuli to produce a response. Operant links a behavior to its consequence.`,[`Classical uses consequences. Operant uses pairings of stimuli.`,`Classical involves voluntary behavior. Operant involves reflexes.`,`Classical was developed by Skinner. Operant was developed by Pavlov.`],`Pavlov studied classical conditioning. Skinner studied operant conditioning.`],
+[`op`,`A parent gives a child candy to stop a tantrum, and the parent is more likely to do it again because the screaming stops. For the parent, this is...`,`Negative reinforcement`,[`Positive punishment`,`Positive reinforcement`,`Negative punishment`],`Removing the unpleasant screaming increased the parent's candy-giving.`],
+[`obs`,`Children who watched an adult hit a Bobo doll later hit it too, even though they were never rewarded. This supports...`,`Observational learning`,[`Classical conditioning`,`Operant shaping`,`Latent learning`],`Bandura showed children learn by watching models.`],
+[`obs`,`A child sees a classmate praised for sharing and then shares more. This is...`,`Vicarious reinforcement`,[`Positive punishment`,`Higher-order conditioning`,`Spontaneous recovery`],`Seeing a model rewarded increases imitation.`],
+[`obs`,`Which is NOT one of the steps needed for observational learning?`,`Extinction`,[`Attention`,`Retention`,`Motivation`],`The steps are attention, retention, reproduction, and motivation.`],
+[`obs`,`Neurons that fire both when you perform an action and when you watch someone else do it are...`,`Mirror neurons`,[`Feature detectors`,`Glial cells`,`Interneurons`],`Mirror neurons may support imitation and empathy.`],
+[`obs`,`Rats that explored a maze without rewards later ran it quickly once food appeared. Tolman concluded they had formed...`,`A cognitive map (latent learning)`,[`A conditioned response`,`A discriminative stimulus`,`A fixed-interval pattern`],`Learning was hidden until there was an incentive.`],
+[`obs`,`A chimpanzee pauses, looks around, then suddenly stacks boxes to reach a banana. Köhler called this...`,`Insight learning`,[`Shaping`,`Classical conditioning`,`Spontaneous recovery`],`Insight is a sudden realization of a solution.`],
+[`obs`,`Trained raccoons began rubbing coins together instead of depositing them, as they do with food. This is...`,`Instinctive drift`,[`Learned helplessness`,`Extinction`,`Latent learning`],`Conditioned behavior drifts back toward instinct.`],
+[`obs`,`People learn to fear snakes and spiders more easily than flowers. Which concept explains this?`,`Biological preparedness`,[`Overjustification`,`Latent learning`,`Partial reinforcement`],`Evolution predisposes us to learn some associations more easily.`],
+[`obs`,`Latent learning, insight, and observational learning challenge strict behaviorism because they show...`,`Mental processes influence learning`,[`Learning requires reinforcement every time`,`Only reflexes can be learned`,`Learning does not change behavior`],`Learning can happen without reinforcement or visible behavior.`]
+];
+
+/* ---------- lab scenarios [text, correct index, explanation] ---------- */
+const TYPES=[`Classical conditioning`,`Positive reinforcement`,`Negative reinforcement`,`Positive punishment`,`Negative punishment`,`Observational learning`];
+const SCEN_TYPE=[
+[`A dog gets excited whenever it hears the can opener, because the sound has always come right before dinner.`,0,`A neutral sound was paired with food, so the sound now triggers an involuntary response.`],
+[`A child gets a sticker every time she puts her toys away, and now she cleans up more often.`,1,`A pleasant stimulus (the sticker) was added and the behavior increased.`],
+[`Taking an aspirin makes a headache go away, so a person is more likely to take aspirin at the next headache.`,2,`An unpleasant stimulus (the headache) was removed and the behavior increased.`],
+[`A teen who talks back loses phone privileges for the weekend and talks back less.`,4,`A pleasant stimulus (the phone) was removed and the behavior decreased.`],
+[`A student who texts in class is given extra homework and stops texting.`,3,`An unpleasant stimulus (extra homework) was added and the behavior decreased.`],
+[`A boy watches his older sister get praised for sharing and starts sharing more at school.`,5,`He learned by watching a model who was rewarded (vicarious reinforcement).`],
+[`A rat presses a lever and the electric shock on its cage floor stops. It presses the lever more often.`,2,`The unpleasant shock was removed and the behavior increased.`],
+[`A person feels nauseous at the smell of a food that made them sick last week.`,0,`The smell was paired with illness, so the smell now triggers nausea.`],
+[`A toddler touches a hot stove, gets burned, and stops touching it.`,3,`Pain (an unpleasant stimulus) was added and the behavior decreased.`],
+[`A manager pays a bonus when a worker meets a sales target, and sales improve.`,1,`A pleasant stimulus (the bonus) was added and the behavior increased.`],
+[`A driver buckles up because the car's annoying beeping stops when the belt clicks.`,2,`The beeping is removed when the behavior happens, so buckling up becomes more likely.`],
+[`A child is sent to time-out, away from playtime, for hitting, and hits less often.`,4,`Access to something pleasant (playtime) was removed and the behavior decreased.`],
+[`A person's heart races at the sound of a dentist's drill because the drill has been paired with pain.`,0,`The drill is a conditioned stimulus and the racing heart is an involuntary conditioned response.`],
+[`An apprentice watches an expert chef and then copies her knife technique.`,5,`Learning by watching and imitating a model is observational learning.`],
+[`Employees who arrive on time are excused from a dull morning meeting, and lateness drops.`,2,`Removing the meeting (unpleasant) increased on-time arrival, so this is negative reinforcement.`]
+];
+const ROLES=[`Unconditioned stimulus (UCS)`,`Unconditioned response (UCR)`,`Neutral stimulus (NS)`,`Conditioned stimulus (CS)`,`Conditioned response (CR)`];
+const SCEN_ROLE=[
+[`Before any training, a dog salivates when it sees food. What is the food?`,0,`Food triggers salivation naturally, with no learning.`],
+[`Before any training, a dog salivates when it sees food. What is the salivation?`,1,`It is the natural, unlearned reaction to the food.`],
+[`A bell rings before training and the dog does not react to it. What is the bell at this point?`,2,`It does not yet trigger the response, so it is neutral.`],
+[`After repeated pairings with food, the bell alone makes the dog salivate. What is the bell now?`,3,`The former neutral stimulus now triggers the response.`],
+[`After repeated pairings with food, the bell alone makes the dog salivate. What is the salivation to the bell?`,4,`It is the learned response to the conditioned stimulus.`],
+[`Little Albert cries when he hears a loud bang. What is the loud bang?`,0,`The bang naturally causes fear.`],
+[`After pairings with the loud bang, Albert cries at the sight of a white rat alone. What is the crying at the rat?`,4,`It is a learned response to the rat, the conditioned stimulus.`],
+[`A woman eats shrimp and gets food poisoning. Now the sight of shrimp makes her nauseous. What is the shrimp now?`,3,`The shrimp was paired with illness, so it became a conditioned stimulus.`],
+[`A child gets a painful shot at the doctor and cries. Later, the sight of a white coat makes her cry. What is the white coat?`,3,`The white coat was paired with the shot and now triggers crying.`],
+[`A child cries from the pain of a shot at the doctor. What is the crying from the pain?`,1,`Pain naturally causes crying, so it is the unconditioned response.`],
+[`A cat ignores the sound of an electric can opener at first. Later it runs to the kitchen when it hears it, because the sound always comes before food. What is the sound at first?`,2,`Before pairing, the sound is a neutral stimulus.`]
+];
+
+/* ---------- eye and ear diagrams ---------- */
+const DIAG={
+eye:{aria:`Cross-section of the eye with the front of the eye on the left`,
+groups:[{id:`g1`,name:`Front of the eye`},{id:`g2`,name:`Retina and receptors`},{id:`g3`,name:`Leaving the eye`}],
+svg:`<circle class="body" cx="235" cy="150" r="100"/>
+<rect class="body" x="8" y="204" width="116" height="88" rx="8"/>
+<path class="reg g1" data-id="cornea" d="M142 108 Q104 150 142 192 Q124 150 142 108 Z"/>
+<rect class="reg g1" data-id="iris" x="156" y="100" width="14" height="30" rx="3"/>
+<rect class="reg g1" data-id="iris" x="156" y="170" width="14" height="30" rx="3"/>
+<rect class="reg g1" data-id="pupil" x="150" y="132" width="26" height="36" rx="4"/>
+<ellipse class="reg g1" data-id="lens" cx="192" cy="150" rx="14" ry="36"/>
+<path class="reg line g2" data-id="retina" d="M299 73 A100 100 0 0 1 299 227"/>
+<circle class="reg g2 dot" data-id="fovea" cx="334" cy="150" r="9"/>
+<circle class="reg g3 dot" data-id="blindspot" cx="327" cy="187" r="8"/>
+<path class="reg line g3" data-id="optic" d="M331 191 L388 222"/>
+<rect class="reg g2" data-id="rod" x="24" y="226" width="12" height="42" rx="5"/>
+<polygon class="reg g2" data-id="cone" points="76,224 90,268 62,268"/>
+<text class="cap" x="14" y="217">RETINA CLOSE-UP</text>
+<text class="lbl" x="30" y="284" text-anchor="middle">ROD</text>
+<text class="lbl" x="76" y="284" text-anchor="middle">CONE</text>
+<text class="lbl" x="8" y="66">CORNEA</text><line class="lead" x1="52" y1="70" x2="124" y2="146"/>
+<text class="lbl" x="8" y="154">PUPIL</text><line class="lead" x1="48" y1="151" x2="152" y2="151"/>
+<text class="lbl" x="150" y="24" text-anchor="middle">IRIS</text><line class="lead" x1="153" y1="30" x2="162" y2="100"/>
+<text class="lbl" x="204" y="24" text-anchor="middle">LENS</text><line class="lead" x1="203" y1="30" x2="194" y2="114"/>
+<text class="lbl" x="338" y="52">RETINA</text><line class="lead" x1="346" y1="58" x2="313" y2="86"/>
+<text class="lbl" x="322" y="154" text-anchor="end">FOVEA</text>
+<text class="lbl" x="316" y="204" text-anchor="end">BLIND SPOT</text><line class="lead" x1="318" y1="199" x2="323" y2="193"/>
+<text class="lbl" x="392" y="246" text-anchor="end">OPTIC NERVE</text>`,
+regs:[
+{id:`cornea`,name:`Cornea`,group:`g1`,clue:`The first structure light passes through. A clear dome at the front of the eye.`,job:`Clear outer covering at the front of the eye. It does most of the bending of incoming light.`,damage:`Scarring or clouding blurs vision. A corneal transplant can restore it.`,hook:`The cornea is the front window.`},
+{id:`pupil`,name:`Pupil`,group:`g1`,clue:`The opening that gets smaller in bright light and larger in dim light.`,job:`The opening in the center of the iris that lets light in.`,damage:`A pupil that does not react to light can signal a problem in the nervous system.`,hook:`Pupil is the hole. The iris is the muscle around it.`},
+{id:`iris`,name:`Iris`,group:`g1`,clue:`The colored ring of muscle that adjusts how much light enters.`,job:`A ring of muscle that gives the eye its color and controls the size of the pupil.`,damage:`If it cannot adjust, too much or too little light enters.`,hook:`Iris controls the pupil, like a camera aperture.`},
+{id:`lens`,name:`Lens`,group:`g1`,clue:`Flexible structure behind the pupil that changes shape to focus.`,job:`Changes shape (accommodation) to focus light on the retina. It gets thicker for near objects and flatter for far ones.`,damage:`With age it stiffens, making close reading hard. A cloudy lens is a cataract.`,hook:`Lens focuses. Thick for near, thin for far.`},
+{id:`retina`,name:`Retina`,group:`g2`,clue:`The back inner surface, where light is transduced into neural signals.`,job:`The light-sensitive inner layer. Rods and cones transduce light, then signals pass to bipolar cells and then ganglion cells.`,damage:`A detached or damaged retina can cause vision loss.`,hook:`Retina is where light becomes a neural message.`},
+{id:`fovea`,name:`Fovea`,group:`g2`,clue:`Center of the retina, packed with cones, where vision is sharpest.`,job:`A small central spot of the retina packed with cones. It gives the sharpest vision and the best color.`,damage:`Damage destroys central, detailed vision, which makes reading and recognizing faces hard.`,hook:`Fovea means focus.`},
+{id:`rod`,name:`Rod`,group:`g2`,clue:`Receptor for dim light. No color, mostly in the periphery.`,job:`Receptors for dim light and peripheral vision. They see only black, white, and gray. About 120 million per eye and none in the fovea.`,damage:`Loss causes night blindness and poor peripheral vision.`,hook:`Rods are for night and the sides.`},
+{id:`cone`,name:`Cone`,group:`g2`,clue:`Receptor for color and fine detail, concentrated in the fovea.`,job:`Receptors for bright light, color, and fine detail. About 6 million per eye, concentrated in the fovea. Three types: red, green, and blue sensitive.`,damage:`Missing or faulty cones cause color vision deficiency.`,hook:`Cones are for color and the center.`},
+{id:`blindspot`,name:`Blind spot`,group:`g3`,clue:`A spot with no rods or cones, because the optic nerve exits there.`,job:`The point where the optic nerve leaves the eye. With no receptors there, it cannot detect light. You do not notice it because the brain fills in the gap and your other eye covers it.`,damage:`Everyone has one. It only becomes noticeable in tests.`,hook:`No receptors, no vision.`},
+{id:`optic`,name:`Optic nerve`,group:`g3`,clue:`The cable that carries visual signals from the eye to the brain.`,job:`A bundle of ganglion cell axons that carries visual information to the thalamus and then the occipital lobe. Some fibers cross at the optic chiasm.`,damage:`Damage causes partial or complete blindness in that eye.`,hook:`The optic nerve is the cable from eye to brain.`}
+]},
+ear:{aria:`Cross-section of the ear with the outer ear on the left`,
+groups:[{id:`g1`,name:`Outer ear`},{id:`g2`,name:`Middle ear`},{id:`g3`,name:`Inner ear`},{id:`g4`,name:`To the brain`}],
+svg:`<rect class="body" x="148" y="118" width="70" height="86" rx="12"/>
+<rect class="body" x="36" y="252" width="204" height="30" rx="15"/>
+<path class="reg g1" data-id="pinna" d="M22 150 C8 82 66 58 88 98 C98 118 90 138 96 160 C102 190 62 214 40 192 C26 178 24 166 22 150 Z"/>
+<rect class="reg g1" data-id="canal" x="96" y="139" width="46" height="24" rx="3"/>
+<path class="reg line g2" data-id="eardrum" d="M144 124 L144 178"/>
+<ellipse class="reg g2" data-id="hammer" cx="160" cy="152" rx="9" ry="7"/>
+<ellipse class="reg g2" data-id="anvil" cx="181" cy="142" rx="8" ry="9"/>
+<ellipse class="reg g2" data-id="stirrup" cx="201" cy="154" rx="7" ry="6"/>
+<circle class="reg g2 dot" data-id="oval" cx="222" cy="160" r="6"/>
+<ellipse class="reg g3" data-id="cochlea" cx="266" cy="162" rx="40" ry="34"/>
+<path class="deco" d="M248 166 C248 146 284 144 284 164 C284 180 262 182 262 168 C262 160 274 160 274 166"/>
+<ellipse class="reg g3" data-id="canals" cx="262" cy="94" rx="26" ry="9"/>
+<ellipse class="reg g3" data-id="canals" cx="262" cy="94" rx="26" ry="9" transform="rotate(60 262 94)"/>
+<ellipse class="reg g3" data-id="canals" cx="262" cy="94" rx="26" ry="9" transform="rotate(120 262 94)"/>
+<path class="reg line g4" data-id="nerve" d="M304 150 C330 140 350 130 376 118"/>
+<rect class="reg g3" data-id="hair" x="46" y="257" width="184" height="8" rx="3"/>
+<path class="reg line g3" data-id="basilar" d="M46 273 L230 273"/>
+<text class="cap" x="38" y="296">COCHLEA UNROLLED</text>
+<text class="lbl" x="44" y="246">HIGH PITCH</text>
+<text class="lbl" x="236" y="246" text-anchor="end">LOW PITCH</text>
+<text class="lbl" x="250" y="264">HAIR CELLS</text>
+<text class="lbl" x="250" y="278">BASILAR MEMBRANE</text>
+<text class="lbl" x="10" y="46">PINNA</text><line class="lead" x1="32" y1="52" x2="46" y2="76"/>
+<text class="lbl" x="119" y="130" text-anchor="middle">CANAL</text>
+<text class="lbl" x="122" y="108" text-anchor="middle">EARDRUM</text>
+<text class="lbl" x="150" y="184" text-anchor="middle">HAMMER</text><line class="lead" x1="153" y1="187" x2="160" y2="159"/>
+<text class="lbl" x="184" y="112" text-anchor="middle">ANVIL</text><line class="lead" x1="183" y1="116" x2="182" y2="132"/>
+<text class="lbl" x="196" y="198" text-anchor="middle">STIRRUP</text><line class="lead" x1="198" y1="192" x2="201" y2="161"/>
+<text class="lbl" x="240" y="226" text-anchor="end">OVAL WINDOW</text><line class="lead" x1="228" y1="216" x2="223" y2="167"/>
+<text class="lbl" x="270" y="214" text-anchor="middle">COCHLEA</text><line class="lead" x1="268" y1="198" x2="268" y2="196"/>
+<text class="lbl" x="236" y="56" text-anchor="end">SEMICIRCULAR CANALS</text><line class="lead" x1="240" y1="60" x2="252" y2="78"/>
+<text class="lbl" x="394" y="104" text-anchor="end">AUDITORY NERVE</text><line class="lead" x1="372" y1="108" x2="372" y2="115"/>`,
+regs:[
+{id:`pinna`,name:`Pinna`,group:`g1`,clue:`The visible outer ear that collects sound.`,job:`The visible outer ear. It collects sound waves, funnels them into the ear canal, and helps with locating sounds.`,damage:`Little effect on hearing alone. Hearing loss comes from deeper structures.`,hook:`Pinna is the part you can see.`},
+{id:`canal`,name:`Auditory canal`,group:`g1`,clue:`The tube that leads from the outer ear to the eardrum.`,job:`A tube that carries sound waves to the eardrum.`,damage:`A blockage, such as earwax, can cause conduction hearing loss.`,hook:`The canal is the tunnel to the eardrum.`},
+{id:`eardrum`,name:`Eardrum`,group:`g2`,clue:`Thin membrane that vibrates first. It marks the border of the outer and middle ear.`,job:`The tympanic membrane. It vibrates when sound waves hit it and passes the vibrations to the middle ear bones.`,damage:`A ruptured eardrum causes conduction hearing loss.`,hook:`The eardrum is the drumhead.`},
+{id:`hammer`,name:`Hammer (malleus)`,group:`g2`,clue:`First ossicle. It is attached to the eardrum.`,job:`The first of three tiny middle-ear bones. It takes vibrations from the eardrum and passes them on.`,damage:`Damage to the ossicles causes conduction hearing loss.`,hook:`Hammer, anvil, stirrup: H-A-S in order.`},
+{id:`anvil`,name:`Anvil (incus)`,group:`g2`,clue:`The middle ossicle, between the hammer and the stirrup.`,job:`The middle ossicle. It passes vibrations from the hammer to the stirrup.`,damage:`Damage to the ossicles causes conduction hearing loss.`,hook:`The hammer strikes the anvil.`},
+{id:`stirrup`,name:`Stirrup (stapes)`,group:`g2`,clue:`Last ossicle and the smallest bone in the body. It pushes on the oval window.`,job:`The smallest bone in the body. It pushes on the oval window to send vibrations into the cochlea.`,damage:`Stiffening can block sound from reaching the cochlea.`,hook:`The stirrup is the last step before the cochlea.`},
+{id:`oval`,name:`Oval window`,group:`g2`,clue:`A membrane at the entrance of the cochlea, pushed by the stirrup.`,job:`The membrane at the entrance to the cochlea. The stirrup pushes on it, which moves the cochlear fluid.`,damage:`Problems here block sound from reaching the cochlea.`,hook:`The oval window is the doorway to the cochlea.`},
+{id:`cochlea`,name:`Cochlea`,group:`g3`,clue:`Snail-shaped, fluid-filled structure where sound becomes neural signals.`,job:`A snail-shaped, fluid-filled tube in the inner ear. Vibrations create waves in the fluid that move the basilar membrane and bend hair cells, producing transduction.`,damage:`Hair cell damage from loud noise causes sensorineural hearing loss. Cochlear implants can bypass damaged hair cells.`,hook:`Cochlea means snail.`},
+{id:`hair`,name:`Hair cells`,group:`g3`,clue:`The receptors for hearing. Bending them creates neural signals.`,job:`Auditory receptors on the basilar membrane. Bending triggers neural impulses in the auditory nerve.`,damage:`Loud noise and aging destroy hair cells. They do not regrow in humans, so the loss is permanent.`,hook:`Hair cells are hearing's version of rods and cones.`},
+{id:`basilar`,name:`Basilar membrane`,group:`g3`,clue:`A membrane in the cochlea that vibrates in different places for different pitches.`,job:`A flexible membrane running the length of the cochlea that holds the hair cells. High pitches vibrate it near the base (by the oval window). Low pitches vibrate it near the apex.`,damage:`Damage reduces the ability to hear certain pitches.`,hook:`Place theory lives here.`},
+{id:`canals`,name:`Semicircular canals`,group:`g3`,clue:`Three fluid-filled loops that sense head movement and balance.`,job:`Three fluid-filled loops in the inner ear at right angles to each other. They sense head rotation and support the vestibular sense.`,damage:`Problems cause dizziness and loss of balance.`,hook:`Three loops for three planes of motion.`},
+{id:`nerve`,name:`Auditory nerve`,group:`g4`,clue:`Carries the signal from the cochlea toward the brain.`,job:`Carries neural signals from the cochlea to the thalamus and then to the auditory cortex in the temporal lobe.`,damage:`Nerve damage causes sensorineural hearing loss.`,hook:`The auditory nerve is the cable from cochlea to brain.`}
+]}};
+
+/* ---------- tabs ---------- */
+const VIEWS=[`learn`,`diagram`,`lab`,`cards`,`quiz`];
+function show(v,noScroll){
+  VIEWS.forEach(n=>{$(`#v-`+n).hidden=(n!==v);$(`#t-`+n).setAttribute(`aria-selected`,String(n===v))});
+  store.set(`ap34-tab`,v);
+  if(!noScroll)window.scrollTo(0,0);
+}
+$(`.tabs`).addEventListener(`click`,e=>{const b=e.target.closest(`[data-view]`);if(b)show(b.dataset.view)});
+
+/* ---------- learn ---------- */
+function renderLearn(){
+  let html=``,lastUnit=0,first=true;
+  NOTES.forEach(n=>{
+    if(n.unit!==lastUnit){html+=`<h3 class="unit">${UNITS[n.unit]}</h3>`;lastUnit=n.unit}
+    html+=`<details class="topic"${first?` open`:``}><summary><span class="tname">${n.full}</span><span class="tcount">${n.items.length} TERMS</span></summary>
+    <div class="tbody">${n.extra||``}<dl>${n.items.map(it=>`<div class="row"><dt>${it[0]}</dt><dd>${it[1]}</dd></div>`).join(``)}</dl>
+    <p class="trap"><b>Exam trap</b>${n.trap}</p>
+    <div class="btnrow"><button class="btn small" data-go="cards" data-topic="${n.id}">Flashcards</button><button class="btn small" data-go="quiz" data-topic="${n.id}">Quiz on this topic</button>${n.goDiagram?`<button class="btn small" data-go="diagram" data-diag="${n.goDiagram}">Open the ${n.goDiagram} diagram</button>`:``}${n.goLab?`<button class="btn small" data-go="lab">Conditioning lab</button>`:``}</div></div></details>`;
+    first=false;
+  });
+  $(`#topics`).innerHTML=html;
+}
+document.addEventListener(`click`,e=>{
+  const b=e.target.closest(`[data-go]`);if(!b)return;
+  const v=b.dataset.go,t=b.dataset.topic;
+  if(v===`cards`&&t){fc.scope=t;$(`#fc-topic`).value=t;buildDeck()}
+  if(v===`quiz`&&t){qz={screen:`start`,topic:t};qRender()}
+  if(v===`diagram`&&b.dataset.diag){setDiag(b.dataset.diag)}
+  show(v);
+});
+
+/* ---------- diagrams ---------- */
+let diag=`eye`;
+const dsel={eye:`cornea`,ear:`pinna`};
+const test={on:false,target:null,tries:0,done:false,msg:``,cls:``,ok:0,n:0};
+const dRegs=()=>DIAG[diag].regs;
+const dReg=id=>dRegs().find(r=>r.id===id);
+const dGroup=id=>DIAG[diag].groups.find(g=>g.id===id);
+function setDiag(name){
+  diag=name;test.on=false;loadDiagram();
+}
+function loadDiagram(){
+  const svg=$(`#dsvg`);
+  svg.setAttribute(`aria-label`,DIAG[diag].aria);
+  svg.innerHTML=DIAG[diag].svg;
+  const seen={};
+  $$(`#dsvg [data-id]`).forEach(el=>{
+    const r=dReg(el.dataset.id);
+    el.setAttribute(`role`,`button`);el.setAttribute(`aria-label`,r.name);
+    el.setAttribute(`tabindex`,seen[r.id]?`-1`:`0`);seen[r.id]=true;
+  });
+  $(`#d-eye`).setAttribute(`aria-pressed`,String(diag===`eye`));
+  $(`#d-ear`).setAttribute(`aria-pressed`,String(diag===`ear`));
+  $(`#chips`).innerHTML=DIAG[diag].groups.map(g=>`<div class="${g.id}"><p class="cglabel"><i class="dotk"></i>${g.name}</p><div class="chiprow">${dRegs().filter(r=>r.group===g.id).map(r=>`<button class="chip" data-id="${r.id}" aria-pressed="false">${r.name}</button>`).join(``)}</div></div>`).join(``);
+  renderDiagram();
+}
+function pick(id){
+  if(!test.on){dsel[diag]=id;renderDiagram();return}
+  if(test.done)return;
+  if(id===test.target){
+    test.done=true;test.n++;if(test.tries===0)test.ok++;
+    test.msg=test.tries===0?`Correct on the first try.`:`Correct.`;test.cls=`ok`;dsel[diag]=id;
+  }else{
+    test.tries++;
+    test.msg=`That is the `+dReg(id).name+`. Read the clue again and try another part.`;test.cls=`no`;
+    const els=$$(`#dsvg [data-id="`+id+`"]`);els.forEach(el=>el.classList.add(`wrong`));
+    setTimeout(()=>els.forEach(el=>el.classList.remove(`wrong`)),900);
+  }
+  renderDiagram();
+}
+function nextTarget(){
+  const ids=dRegs().map(r=>r.id).filter(i=>i!==test.target);
+  test.target=ids[Math.floor(Math.random()*ids.length)];
+  test.tries=0;test.done=false;test.msg=``;test.cls=``;
+  renderDiagram();
+}
+function factsHtml(r){
+  const g=dGroup(r.group);
+  return `<span class="pill ${g.id}">${g.name}</span><h3>${r.name}</h3>
+   <dl class="facts"><dt>What it does</dt><dd>${r.job}</dd><dt>If it goes wrong</dt><dd>${r.damage}</dd><dt>Memory hook</dt><dd>${r.hook}</dd></dl>`;
+}
+function renderDiagram(){
+  const showSel=!test.on||test.done;
+  const cur=dsel[diag];
+  $$(`#dsvg [data-id]`).forEach(el=>el.classList.toggle(`sel`,showSel&&el.dataset.id===cur));
+  $$(`#chips .chip`).forEach(c=>c.setAttribute(`aria-pressed`,String(showSel&&c.dataset.id===cur)));
+  $(`#figure`).classList.toggle(`testing`,test.on);
+  $(`#chips`).hidden=test.on;
+  const tb=$(`#testbtn`);
+  tb.textContent=test.on?`Back to exploring`:`Test me`;
+  tb.classList.toggle(`primary`,!test.on);
+  tb.setAttribute(`aria-pressed`,String(test.on));
+  $(`#modehint`).textContent=test.on?(test.ok+` of `+test.n+` correct on the first try`):`Exploring`;
+  const p=$(`#panel`);
+  if(!test.on){p.innerHTML=factsHtml(dReg(cur));return}
+  const r=dReg(test.target);
+  let h=`<p class="eyebrow">Tap the part that matches</p><p class="clue">${r.clue}</p>`;
+  if(test.msg)h+=`<p class="msg ${test.cls}">${test.msg}</p>`;
+  if(test.done){h+=`<div style="margin-top:14px">${factsHtml(r)}</div><div class="btnrow"><button class="btn primary" id="nextbtn">Next clue</button></div>`}
+  else{h+=`<div class="btnrow"><button class="btn small" id="skipbtn">Show me the answer</button></div>`}
+  p.innerHTML=h;
+  const nb=$(`#nextbtn`);if(nb)nb.focus({preventScroll:true});
+}
+function initDiagram(){
+  $(`#dsvg`).addEventListener(`click`,e=>{const el=e.target.closest(`[data-id]`);if(el)pick(el.dataset.id)});
+  $(`#dsvg`).addEventListener(`keydown`,e=>{
+    if(e.key!==`Enter`&&e.key!==` `)return;
+    const el=e.target.closest(`[data-id]`);if(el){e.preventDefault();pick(el.dataset.id)}
+  });
+  $(`#chips`).addEventListener(`click`,e=>{const c=e.target.closest(`.chip`);if(c)pick(c.dataset.id)});
+  $(`#d-eye`).addEventListener(`click`,()=>setDiag(`eye`));
+  $(`#d-ear`).addEventListener(`click`,()=>setDiag(`ear`));
+  $(`#testbtn`).addEventListener(`click`,()=>{
+    if(test.on){test.on=false;renderDiagram();return}
+    test.on=true;test.ok=0;test.n=0;test.target=null;nextTarget();
+  });
+  $(`#panel`).addEventListener(`click`,e=>{
+    if(e.target.id===`nextbtn`)nextTarget();
+    if(e.target.id===`skipbtn`){test.done=true;test.n++;test.msg=`It was the `+dReg(test.target).name+`.`;test.cls=``;dsel[diag]=test.target;renderDiagram()}
+  });
+  loadDiagram();
+}
+
+/* ---------- conditioning lab ---------- */
+const lab={mode:`type`,queue:[],i:0,picked:-1,score:0};
+function labStart(mode){
+  lab.mode=mode;lab.queue=shuffle(mode===`type`?SCEN_TYPE:SCEN_ROLE);lab.i=0;lab.picked=-1;lab.score=0;
+  $(`#lab-type`).setAttribute(`aria-pressed`,String(mode===`type`));
+  $(`#lab-parts`).setAttribute(`aria-pressed`,String(mode===`parts`));
+  labRender();
+}
+function labRender(){
+  const root=$(`#lab-root`);
+  const choices=lab.mode===`type`?TYPES:ROLES;
+  if(lab.i>=lab.queue.length){
+    root.innerHTML=`<div class="scen"><p class="eyebrow">Round complete</p><p class="score">${lab.score} / ${lab.queue.length}</p><p>${lab.score===lab.queue.length?`Every scenario correct.`:`Run another round to practice the ones you missed. The order is shuffled each time.`}</p><div class="btnrow"><button class="btn primary" id="lab-again">New round</button></div></div>`;
+    return;
+  }
+  const s=lab.queue[lab.i],answered=lab.picked>=0;
+  root.innerHTML=`<div class="scen"><p class="eyebrow">Scenario ${lab.i+1} of ${lab.queue.length} · ${lab.score} correct so far</p>
+   <p class="scentext">${s[0]}</p>
+   <div class="opts grid">${choices.map((c,k)=>{
+      let cls=``,mark=``;
+      if(answered){if(k===s[1]){cls=` correct`;mark=`<span class="mark">Correct answer</span>`}else if(k===lab.picked){cls=` wrong`;mark=`<span class="mark">Your answer</span>`}}
+      return `<button class="opt${cls}" data-k="${k}"${answered?` disabled`:``}>${mark}<span>${c}</span></button>`}).join(``)}</div>
+   ${answered?`<div class="why"><b>${lab.picked===s[1]?`Right.`:`Not quite.`}</b> ${s[2]}</div><div class="btnrow"><button class="btn primary" id="lab-next">${lab.i+1<lab.queue.length?`Next scenario`:`See results`}</button></div>`:``}</div>`;
+  const nb=$(`#lab-next`);if(nb)nb.focus({preventScroll:true});
+}
+function initLab(){
+  $(`#lab-type`).addEventListener(`click`,()=>labStart(`type`));
+  $(`#lab-parts`).addEventListener(`click`,()=>labStart(`parts`));
+  $(`#lab-root`).addEventListener(`click`,e=>{
+    const opt=e.target.closest(`.opt`);
+    if(opt&&lab.picked<0){lab.picked=Number(opt.dataset.k);if(lab.picked===lab.queue[lab.i][1])lab.score++;labRender();return}
+    const id=e.target.id;
+    if(id===`lab-next`){lab.i++;lab.picked=-1;labRender()}
+    else if(id===`lab-again`){labStart(lab.mode)}
+  });
+  labStart(`type`);
+}
+
+/* ---------- flashcards ---------- */
+const known=new Set(store.get(`ap34-known`,[]));
+const fc={scope:`all`,deck:[],flip:false};
+function inScope(i){
+  const t=CARDS[i][0];
+  if(fc.scope===`all`)return true;
+  if(fc.scope===`u3`)return TOPIC[t].unit===3;
+  if(fc.scope===`u4`)return TOPIC[t].unit===4;
+  return t===fc.scope;
+}
+function buildDeck(){
+  const hide=$(`#fc-hide`).checked,sh=$(`#fc-shuffle`).checked;
+  const ids=CARDS.map((c,i)=>i).filter(i=>inScope(i)&&(!hide||!known.has(i)));
+  fc.deck=sh?shuffle(ids):ids;fc.flip=false;renderCard();
+}
+function renderCard(){
+  const root=$(`#fc-root`);
+  const total=CARDS.map((c,i)=>i).filter(inScope);
+  const kn=total.filter(i=>known.has(i)).length;
+  const pct=total.length?Math.round(kn/total.length*100):0;
+  const prog=`<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i style="width:${pct}%"></i></div><p class="small">${kn} of ${total.length} cards known in this set</p>`;
+  if(!fc.deck.length){
+    root.innerHTML=`<div class="empty"><h3>${total.length&&kn===total.length?`You know every card in this set`:`No cards left in this round`}</h3><p class="small">Reset your progress to start over, or choose another set.</p><div class="btnrow"><button class="btn primary" id="fc-reset">Reset this set</button><button class="btn" id="fc-all">Show all cards</button></div></div>`+prog;
+    return;
+  }
+  const c=CARDS[fc.deck[0]];
+  const front=!fc.flip;
+  root.innerHTML=`<button class="card${front?``:` back`}" id="card" aria-label="${front?`Show the answer`:`Show the question`}">
+    <span class="cardtag">${front?`Question`:`Answer`} · ${TOPIC[c[0]].name}</span>
+    <span class="cardtext">${front?c[1]:c[2]}</span>
+    <span class="cardhint">${front?`Tap to flip`:c[1]}</span></button>
+    <div class="btnrow">${front?`<button class="btn primary" id="fc-flip">Show answer</button>`:`<button class="btn" id="fc-again">Still learning</button><button class="btn good" id="fc-got">Got it</button>`}</div>
+    <p class="small" style="margin-top:12px">${fc.deck.length} left in this round</p>`+prog;
+}
+function initCards(){
+  const sel=$(`#fc-topic`);
+  const cnt=f=>CARDS.filter(f).length;
+  sel.innerHTML=`<option value="all">Units 3 and 4 (${CARDS.length})</option>
+   <option value="u3">All of Unit 3 (${cnt(c=>TOPIC[c[0]].unit===3)})</option>
+   <option value="u4">All of Unit 4 (${cnt(c=>TOPIC[c[0]].unit===4)})</option>`
+   +[3,4].map(u=>`<optgroup label="${UNITS[u]}">`+NOTES.filter(n=>n.unit===u).map(n=>`<option value="${n.id}">${n.name} (${cnt(c=>c[0]===n.id)})</option>`).join(``)+`</optgroup>`).join(``);
+  sel.addEventListener(`change`,()=>{fc.scope=sel.value;buildDeck()});
+  $(`#fc-hide`).addEventListener(`change`,buildDeck);
+  $(`#fc-shuffle`).addEventListener(`change`,buildDeck);
+  $(`#fc-root`).addEventListener(`click`,e=>{
+    const btn=e.target.closest(`button`);const id=btn?btn.id:``;
+    if(id===`card`||id===`fc-flip`){fc.flip=!fc.flip;renderCard();const c=$(`#card`);if(c)c.focus({preventScroll:true})}
+    else if(id===`fc-got`){known.add(fc.deck.shift());store.set(`ap34-known`,Array.from(known));fc.flip=false;renderCard()}
+    else if(id===`fc-again`){fc.deck.push(fc.deck.shift());fc.flip=false;renderCard()}
+    else if(id===`fc-reset`){CARDS.forEach((c,i)=>{if(inScope(i))known.delete(i)});store.set(`ap34-known`,Array.from(known));buildDeck()}
+    else if(id===`fc-all`){$(`#fc-hide`).checked=false;buildDeck()}
+  });
+  buildDeck();
+}
+
+/* ---------- quiz ---------- */
+const best=store.get(`ap34-best`,{});
+let qz={screen:`start`,topic:`mix`};
+function pool(scope){
+  return Q.map((q,i)=>i).filter(i=>{
+    const t=Q[i][0];
+    if(scope===`mix`)return true;
+    if(scope===`u3`)return TOPIC[t].unit===3;
+    if(scope===`u4`)return TOPIC[t].unit===4;
+    return t===scope;
+  });
+}
+function scopeName(id){
+  if(id===`mix`)return `Mixed review`;
+  if(id===`u3`)return `All of Unit 3`;
+  if(id===`u4`)return `All of Unit 4`;
+  return TOPIC[id].name;
+}
+function roundSize(id){const n=pool(id).length;return (id===`mix`||id===`u3`||id===`u4`)?Math.min(12,n):n}
+function beginQuiz(list,topic,retry){
+  qz={screen:`q`,topic:topic,list:list,i:0,score:0,missed:[],picked:-1,retry:!!retry};
+  prepOpts();qRender();
+}
+function prepOpts(){
+  const q=Q[qz.list[qz.i]];
+  qz.opts=shuffle([{t:q[2],ok:true}].concat(q[3].map(w=>({t:w,ok:false}))));
+  qz.picked=-1;
+}
+function qRender(){
+  const root=$(`#quiz-root`);
+  if(qz.screen===`start`){
+    const ids=[`mix`,`u3`,`u4`].concat(NOTES.map(n=>n.id));
+    const chips=ids.map(id=>{
+      const b=best[id];
+      return `<button class="tchip" data-topic="${id}" aria-pressed="${qz.topic===id}">${scopeName(id)}<small>${roundSize(id)} questions${b!==undefined?` · best ${b}%`:``}</small></button>`;
+    }).join(``);
+    root.innerHTML=`<p class="lede">Pick a scope, then answer one question at a time. You see the explanation after each answer. Mixed review and the unit sets give a random 12.</p><div class="tchips" id="qchips">${chips}</div><div class="btnrow"><button class="btn primary" id="qstart">Start quiz</button></div>`;
+    return;
+  }
+  if(qz.screen===`q`){
+    const qi=qz.list[qz.i],q=Q[qi],total=qz.list.length;
+    const answered=qz.picked>=0;
+    root.innerHTML=`<p class="eyebrow">Question ${qz.i+1} of ${total} · ${TOPIC[q[0]].name}</p>
+     <div class="bar"><i style="width:${Math.round(qz.i/total*100)}%"></i></div>
+     <p class="qtext">${q[1]}</p>
+     <div class="opts">${qz.opts.map((o,k)=>{
+        let cls=``,mark=``;
+        if(answered){if(o.ok){cls=` correct`;mark=`<span class="mark">Correct answer</span>`}else if(k===qz.picked){cls=` wrong`;mark=`<span class="mark">Your answer</span>`}}
+        return `<button class="opt${cls}" data-k="${k}"${answered?` disabled`:``}>${mark}<span>${o.t}</span></button>`}).join(``)}</div>
+     ${answered?`<div class="why"><b>${qz.opts[qz.picked].ok?`Right.`:`Not quite.`}</b> ${q[4]}</div><div class="btnrow"><button class="btn primary" id="qnext">${qz.i+1<total?`Next question`:`See results`}</button></div>`:``}`;
+    const nb=$(`#qnext`);if(nb)nb.focus({preventScroll:true});
+    return;
+  }
+  const total=qz.list.length,pct=Math.round(qz.score/total*100);
+  root.innerHTML=`<p class="eyebrow">Results · ${scopeName(qz.topic)}</p>
+   <p class="score">${qz.score} / ${total}</p><p>${pct}% correct.${qz.missed.length?` Review what you missed below, then retry just those questions.`:` Nothing missed in this round.`}</p>
+   ${qz.missed.map(i=>`<div class="miss"><p><b>${Q[i][1]}</b></p><p>Answer: ${Q[i][2]}</p><p class="small">${Q[i][4]}</p></div>`).join(``)}
+   <div class="btnrow">${qz.missed.length?`<button class="btn primary" id="qretry">Retry missed (${qz.missed.length})</button>`:``}<button class="btn${qz.missed.length?``:` primary`}" id="qnew">New round</button></div>`;
+}
+function initQuiz(){
+  $(`#quiz-root`).addEventListener(`click`,e=>{
+    const chip=e.target.closest(`.tchip`);
+    if(chip){qz.topic=chip.dataset.topic;qRender();return}
+    const opt=e.target.closest(`.opt`);
+    if(opt&&qz.screen===`q`&&qz.picked<0){
+      qz.picked=Number(opt.dataset.k);
+      if(qz.opts[qz.picked].ok)qz.score++;else qz.missed.push(qz.list[qz.i]);
+      qRender();return;
+    }
+    const btn=e.target.closest(`button`);const id=btn?btn.id:``;
+    if(id===`qstart`){
+      let list=shuffle(pool(qz.topic));
+      list=list.slice(0,roundSize(qz.topic));
+      beginQuiz(list,qz.topic,false);
+    }else if(id===`qnext`){
+      if(qz.i+1<qz.list.length){qz.i++;prepOpts();qRender()}
+      else{
+        qz.screen=`done`;
+        if(!qz.retry){const pct=Math.round(qz.score/qz.list.length*100);if(!(best[qz.topic]>=pct)){best[qz.topic]=pct;store.set(`ap34-best`,best)}}
+        qRender();
+      }
+    }else if(id===`qretry`){beginQuiz(shuffle(qz.missed),qz.topic,true)}
+    else if(id===`qnew`){qz={screen:`start`,topic:qz.topic};qRender()}
+  });
+  qRender();
+}
+
+/* ---------- boot ---------- */
+renderLearn();initDiagram();initLab();initCards();initQuiz();
+const saved=store.get(`ap34-tab`,`learn`);
+show(VIEWS.indexOf(saved)>=0?saved:`learn`,true);
+})();
+</script>
+
+</body>
+</html>
